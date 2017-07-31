@@ -1,0 +1,24 @@
+uuid: 028e6132-08a9-44d8-afb1-505b324eb954
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-right
+  module:
+    - system
+  theme:
+    - red
+id: mainnavigationright
+theme: red
+region: navbar_right
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-right'
+settings:
+  id: 'system_menu_block:main-right'
+  label: 'Main navigation (Right)'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

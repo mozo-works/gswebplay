@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains gs_custom.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function gs_custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the gs_custom module.
+    case 'help.page.gs_custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Gsweb customization') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function gs_custom_theme() {
+  return [
+    'gs_custom_company_address' => [
+      'template' => 'gs_custom_company_address',
+      'variables' => [
+        'company_name' => '',
+        'company_address' => '',
+        'company_phone' => '',
+        'company_fax' => '',
+      ]
+    ],
+  ];
+}

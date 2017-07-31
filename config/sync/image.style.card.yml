@@ -1,0 +1,14 @@
+uuid: ae7fca52-2f47-4da9-82ca-665ed0a7a39b
+langcode: en
+status: true
+dependencies: {  }
+name: card
+label: 'News card (700x455)'
+effects:
+  8ef42e48-4b88-402d-a03b-bed9661db211:
+    uuid: 8ef42e48-4b88-402d-a03b-bed9661db211
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 455

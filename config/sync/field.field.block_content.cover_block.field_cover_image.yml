@@ -1,0 +1,38 @@
+uuid: c246004e-25ba-4138-ba57-58767dafa67d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cover_block
+    - field.storage.block_content.field_cover_image
+  module:
+    - image
+id: block_content.cover_block.field_cover_image
+field_name: field_cover_image
+entity_type: block_content
+bundle: cover_block
+label: 'Cover image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: cover-block
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

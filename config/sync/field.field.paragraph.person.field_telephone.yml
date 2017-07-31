@@ -1,0 +1,19 @@
+uuid: ec227151-2390-4fb1-a201-d7a842567c13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_telephone
+    - paragraphs.paragraphs_type.person
+id: paragraph.person.field_telephone
+field_name: field_telephone
+entity_type: paragraph
+bundle: person
+label: Telephone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

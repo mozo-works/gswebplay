@@ -1,0 +1,45 @@
+uuid: 1c4945e7-b34e-4ae5-9f55-06160677c013
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+_core:
+  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+name: 'Basic HTML'
+format: basic_html
+weight: -9
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<0> <1> <2> <3 cite> <4> <5 type> <6 start type> <7> <8> <9> <10> <11 id> <12 id> <13 id> <14 id> <15 id> <16> <17> <18> <19 src alt height width data-entity-type data-entity-uuid data-align data-caption> <20 href hreflang class="btn btn-default btn-link"> <21> <22> <strong> <em> <a href class="btn-link"> <ul> <li> <ol> <blockquote> <img src alt data-entity-type data-entity-uuid data-align data-caption> <p> <h2> <h3> <h4> <h5> <h6>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 7
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }

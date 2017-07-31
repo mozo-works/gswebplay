@@ -1,0 +1,21 @@
+uuid: fb53a5b1-19e6-4687-bb5b-c1df10a3ca41
+langcode: ko
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color
+    - paragraphs.paragraphs_type.basic
+  module:
+    - options
+id: paragraph.basic.field_color
+field_name: field_color
+entity_type: paragraph
+bundle: basic
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

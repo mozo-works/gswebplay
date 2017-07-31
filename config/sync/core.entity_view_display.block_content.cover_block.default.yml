@@ -1,0 +1,24 @@
+uuid: b9b52567-923e-468a-bdcc-63177529333b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cover_block
+    - field.field.block_content.cover_block.field_cover_image
+  module:
+    - image
+id: block_content.cover_block.default
+targetEntityType: block_content
+bundle: cover_block
+mode: default
+content:
+  field_cover_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  langcode: true

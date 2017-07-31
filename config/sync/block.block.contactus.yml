@@ -1,0 +1,31 @@
+uuid: 4ebfaeca-2c8f-4d68-9f58-bd8ee2876880
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cover_block:eebb734f-5e49-48fc-8b5b-939e66325681'
+  module:
+    - block_content
+    - system
+  theme:
+    - red
+id: contactus
+theme: red
+region: content_header
+weight: 0
+provider: null
+plugin: 'block_content:eebb734f-5e49-48fc-8b5b-939e66325681'
+settings:
+  id: 'block_content:eebb734f-5e49-48fc-8b5b-939e66325681'
+  label: 'Contact us'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /contact-us
+    negate: false
+    context_mapping: {  }

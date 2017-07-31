@@ -1,0 +1,10 @@
+uuid: c5d5b5f5-c659-4032-aff7-92f052ac3ce3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.cover
+label: Cover
+targetEntityType: node
+cache: true

@@ -1,0 +1,6 @@
+uuid: 7e2f52fc-77cd-4e20-91a2-c32a13396ead
+langcode: en
+status: true
+dependencies: {  }
+id: person
+label: Person

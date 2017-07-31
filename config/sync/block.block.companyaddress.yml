@@ -1,0 +1,24 @@
+uuid: eb598b87-2b04-4d16-a2f7-8c8cd64a16f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - gs_custom
+  theme:
+    - red
+id: companyaddress
+theme: red
+region: footer
+weight: 0
+provider: null
+plugin: company_address
+settings:
+  id: company_address
+  label: 'Company address'
+  provider: gs_custom
+  label_display: '0'
+  company_name: 'Gswebplay, Inc.'
+  company_address: '65, Saengnim-daero 259beon-gil, Saengnim-myeon, Gimhae-si, Gyeongsangnam-do, 50802, Rep. of KOREA'
+  company_phone: '+82 55. 326. 9025'
+  company_fax: '+82 55. 326. 9026'
+visibility: {  }

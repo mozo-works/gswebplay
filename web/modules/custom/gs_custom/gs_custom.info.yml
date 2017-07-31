@@ -1,0 +1,7 @@
+name: gs_custom
+type: module
+description: Gsweb customization
+core: 8.x
+package: Custom
+dependencies:
+  - drupal:block

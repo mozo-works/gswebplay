@@ -1,0 +1,31 @@
+uuid: 450f5cb6-dbea-458a-bf12-e6008489303f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:78a586e3-2930-4499-813e-0f08334bbdc2'
+  module:
+    - block_content
+    - system
+  theme:
+    - red
+id: technavpills
+theme: red
+region: content_header
+weight: -1
+provider: null
+plugin: 'block_content:78a586e3-2930-4499-813e-0f08334bbdc2'
+settings:
+  id: 'block_content:78a586e3-2930-4499-813e-0f08334bbdc2'
+  label: 'Tech Nav pills'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tech\r\n/tech/*"
+    negate: false
+    context_mapping: {  }

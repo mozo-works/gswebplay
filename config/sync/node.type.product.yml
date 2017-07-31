@@ -1,0 +1,17 @@
+uuid: 9633d7fd-4515-4586-adcf-1ac21cd4a0cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Product
+type: product
+description: 'Product information including specification, cover image, layout drawing, files for clients.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

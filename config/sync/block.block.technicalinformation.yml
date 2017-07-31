@@ -1,0 +1,31 @@
+uuid: 46c2d8cd-c537-4bf4-a183-325d4ea73610
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cover_block:0bc5b2b4-b17b-443c-b99f-1b7fe7a0252b'
+  module:
+    - block_content
+    - system
+  theme:
+    - red
+id: technicalinformation
+theme: red
+region: content_header
+weight: -2
+provider: null
+plugin: 'block_content:0bc5b2b4-b17b-443c-b99f-1b7fe7a0252b'
+settings:
+  id: 'block_content:0bc5b2b4-b17b-443c-b99f-1b7fe7a0252b'
+  label: 'Technical information'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/tech\r\n/tech/*"
+    negate: false
+    context_mapping: {  }

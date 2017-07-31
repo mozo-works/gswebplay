@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Template for the header
+ */
+#}
+
+<div id="site-header">
+<nav id="roof-top" class="navbar-default navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li{{ active_ko | raw }}><a href="/ko">한국어</a></li>
+      <li{{ active_en | raw }}><a href="/">English</a></li>
+      <li><span class="navbar-btn"><a href="/finder" class="btn btn-default">Finder</a></span></li>
+    </ul>
+  </div>
+</nav>
+
+<nav id="navbar-primary" class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="visible-xs">
+        {{ page.navbar_branding }}
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse">
+    {% if page.navbar_left %}
+      <div class="navbar-left">
+        {{ page.navbar_left }}
+      </div>
+    {% endif %}
+
+    <div class="hidden-xs col-xs-2">
+      {{ page.navbar_branding }}
+    </div>
+
+    {% if page.navbar_right %}
+      <div class="navbar-right">
+        {{ page.navbar_right }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</nav>
+
+<div id="navbar-secondary" class="clearfix">
+  <div class="container">
+    {{ page.navbar_secondary }}
+  </div>
+</div>
+</div>

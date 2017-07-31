@@ -1,0 +1,25 @@
+uuid: 82db26da-0bfb-4ed4-8f63-8e342eadbee5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - red
+id: pagetitle
+theme: red
+region: '-1'
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: ''
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+uuid: 6a116960-68df-4bc7-a689-a119f4d7b9eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ages
+field_name: field_ages
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

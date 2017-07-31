@@ -1,0 +1,19 @@
+uuid: 2176a555-0065-49eb-a1d4-eafdca725de2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fall_height
+    - node.type.product
+id: node.product.field_fall_height
+field_name: field_fall_height
+entity_type: node
+bundle: product
+label: 'Fall Height (m)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

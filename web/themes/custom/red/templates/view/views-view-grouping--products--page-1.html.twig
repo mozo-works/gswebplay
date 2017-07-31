@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single views grouping.
+ *
+ * Available variables:
+ * - view: The view object.
+ * - grouping: The grouping instruction.
+ * - grouping_level: A number indicating the hierarchical level of the grouping.
+ * - title: The group heading.
+ * - content: The content to be grouped.
+ * - rows: The rows returned from the view.
+ *
+ * @see template_preprocess_views_view_grouping()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="grouping{{ hide }}" id="{{ parent_id }}">
+  <div class="header-cover" style="background: url({{ cover_image_url }}) no-repeat; background-size: cover;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="title">{{ cover_title }}</h2>
+          <p>{{ cover_description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contents-rows container">
+    <div class="row">
+      {{ content }}
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,54 @@
+uuid: c0df45e9-831f-4f08-8496-f48e0e2b2cf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_partners
+    - paragraphs.paragraphs_type.continent
+    - paragraphs.paragraphs_type.partner
+  module:
+    - entity_reference_revisions
+id: paragraph.continent.field_partners
+field_name: field_partners
+entity_type: paragraph
+bundle: continent
+label: Partners
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      partner: partner
+    target_bundles_drag_drop:
+      continent:
+        weight: 10
+        enabled: false
+      address:
+        weight: 11
+        enabled: false
+      basic:
+        weight: 12
+        enabled: false
+      heading:
+        weight: 13
+        enabled: false
+      image_card:
+        weight: 14
+        enabled: false
+      image_text:
+        weight: 15
+        enabled: false
+      partner:
+        enabled: true
+        weight: 16
+      person:
+        weight: 17
+        enabled: false
+      video_basic:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

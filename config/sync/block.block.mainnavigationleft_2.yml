@@ -1,0 +1,24 @@
+uuid: f8f132d1-afca-4abb-a2fe-1b788d97b0ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - red
+id: mainnavigationleft_2
+theme: red
+region: navbar_left
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation (Left)'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

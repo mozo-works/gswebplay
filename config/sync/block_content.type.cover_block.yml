@@ -1,0 +1,8 @@
+uuid: 34239b5f-375c-46c0-9d57-6380887a354e
+langcode: en
+status: true
+dependencies: {  }
+id: cover_block
+label: 'Cover block'
+revision: 0
+description: ''

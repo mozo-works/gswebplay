@@ -1,0 +1,177 @@
+uuid: 5a65bb67-a181-449a-93d8-3f35cdf65cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_ages
+    - field.field.node.product.field_cad_dwg
+    - field.field.node.product.field_capacity
+    - field.field.node.product.field_category
+    - field.field.node.product.field_cert
+    - field.field.node.product.field_cover
+    - field.field.node.product.field_fall_height
+    - field.field.node.product.field_image
+    - field.field.node.product.field_install
+    - field.field.node.product.field_size_inch
+    - field.field.node.product.field_size_meter
+    - field.field.node.product.field_use_zone
+    - image.style.product_card
+    - node.type.product
+  module:
+    - ds
+    - field_slideshow
+    - file
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      path: modules/contrib/ds
+      library: layout_plugin/ds_2col
+      disable_css: true
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          left: div
+          right: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      left:
+        - field_image
+      right:
+        - node_title
+        - field_category
+        - body
+        - field_ages
+        - field_capacity
+        - field_size_meter
+        - field_size_inch
+        - field_use_zone
+        - field_fall_height
+        - field_cert
+        - field_install
+        - field_cad_dwg
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_ages:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_cad_dwg:
+    weight: 12
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+  field_capacity:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_category:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cert:
+    weight: 10
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+  field_fall_height:
+    weight: 9
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_image:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: product_card
+      image_link: ''
+      slideshow_caption: ''
+      slideshow_caption_link: ''
+      slideshow_fx: fade
+      slideshow_speed: '700'
+      slideshow_timeout: '0'
+      slideshow_order: ''
+      slideshow_controls_position: after
+      slideshow_start_on_hover: '1'
+      slideshow_pager: image
+      slideshow_pager_position: after
+      slideshow_pager_image_style: medium
+      slideshow_controls: 0
+      slideshow_controls_pause: 0
+      slideshow_pause: 0
+      slideshow_colorbox_image_style: ''
+      slideshow_colorbox_slideshow: ''
+      slideshow_colorbox_slideshow_speed: '4000'
+      slideshow_colorbox_transition: elastic
+      slideshow_colorbox_speed: '350'
+    third_party_settings:
+      ds:
+        ds_limit: '3'
+    type: slideshow
+  field_install:
+    weight: 11
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+  field_size_inch:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_size_meter:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_use_zone:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_cover: true
+  langcode: true
+  links: true

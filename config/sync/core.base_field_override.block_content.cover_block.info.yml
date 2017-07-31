@@ -1,0 +1,18 @@
+uuid: 5b8cd146-735a-4720-8f91-ccf88bcf32cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cover_block
+id: block_content.cover_block.info
+field_name: info
+entity_type: block_content
+bundle: cover_block
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

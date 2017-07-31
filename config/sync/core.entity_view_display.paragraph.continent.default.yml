@@ -1,0 +1,33 @@
+uuid: 6fde42ea-28e2-45d8-a6e2-0d89db9f0786
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.continent.field_partners
+    - field.field.paragraph.continent.field_title
+    - paragraphs.paragraphs_type.continent
+  module:
+    - entity_reference_revisions
+id: paragraph.continent.default
+targetEntityType: paragraph
+bundle: continent
+mode: default
+content:
+  field_partners:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

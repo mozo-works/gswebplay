@@ -1,0 +1,6 @@
+uuid: 418141fe-e7db-43a3-a20a-e4c8132f4cd8
+langcode: en
+status: true
+dependencies: {  }
+id: video_basic
+label: 'Video Basic'

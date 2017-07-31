@@ -1,0 +1,31 @@
+uuid: a9de5937-7b61-4ba3-8b5e-d1af8da549f7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cover_block:c8f1f656-eeb6-488b-b6b3-f81539641b6d'
+  module:
+    - block_content
+    - system
+  theme:
+    - red
+id: aboutus
+theme: red
+region: content_header
+weight: -5
+provider: null
+plugin: 'block_content:c8f1f656-eeb6-488b-b6b3-f81539641b6d'
+settings:
+  id: 'block_content:c8f1f656-eeb6-488b-b6b3-f81539641b6d'
+  label: 'About us'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /about
+    negate: false
+    context_mapping: {  }

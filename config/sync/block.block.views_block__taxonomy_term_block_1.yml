@@ -1,0 +1,32 @@
+uuid: 32e0fe12-8f1d-4956-a6d9-d115e7a399c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.taxonomy_term
+  module:
+    - node
+    - views
+  theme:
+    - red
+id: views_block__taxonomy_term_block_1
+theme: red
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:taxonomy_term-block_1'
+settings:
+  id: 'views_block:taxonomy_term-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

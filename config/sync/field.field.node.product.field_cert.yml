@@ -1,0 +1,27 @@
+uuid: a7b0f9f0-a56b-4ba2-bce6-9498215d7cd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cert
+    - node.type.product
+  module:
+    - file
+id: node.product.field_cert
+field_name: field_cert
+entity_type: node
+bundle: product
+label: Certificate
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: cert
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,24 @@
+uuid: ccacbda5-5085-4443-9302-ebb74192c843
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - red
+id: mainnavigationleft
+theme: red
+region: navbar_secondary
+weight: -4
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation (Left)'
+  provider: system
+  label_display: visible
+  level: 2
+  depth: 1
+visibility: {  }

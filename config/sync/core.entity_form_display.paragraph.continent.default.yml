@@ -1,0 +1,41 @@
+uuid: 1bdd9c6c-2259-4597-8fa8-ed231451a626
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.continent.field_partners
+    - field.field.paragraph.continent.field_title
+    - paragraphs.paragraphs_type.continent
+  module:
+    - paragraphs
+id: paragraph.continent.default
+targetEntityType: paragraph
+bundle: continent
+mode: default
+content:
+  field_partners:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  status:
+    type: boolean_checkbox
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

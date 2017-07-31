@@ -1,0 +1,14 @@
+uuid: a390f50c-f0a5-4f9e-933c-e4a35c6f23c4
+langcode: en
+status: true
+dependencies: {  }
+name: product_card
+label: 'Product card (700x505)'
+effects:
+  e1df8fda-2d6c-4c54-aed4-d4b15e1690b0:
+    uuid: e1df8fda-2d6c-4c54-aed4-d4b15e1690b0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 505

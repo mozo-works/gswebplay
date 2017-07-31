@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+
+{%
+set classes = [
+  full_width == false ? 'container' : 'full-width',
+  blank ? 'blank'
+]
+%}
+
+{% if blank == false %}{% include directory ~ '/templates/_partials/header.html.twig' %}{% endif %}
+
+{% if page.content_header %}
+{{ page.content_header }}
+{% endif %}
+
+{% block content %}
+<main role="main">
+  <div{{ attributes.addClass(classes) }}>
+    {{ page.content }}
+  </div>
+</main>
+{% endblock %}
+
+{% if blank == false %}{% include directory ~ '/templates/_partials/footer.html.twig' %}{% endif %}

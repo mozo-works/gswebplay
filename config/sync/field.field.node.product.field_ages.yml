@@ -1,0 +1,19 @@
+uuid: 42eb9bea-b09a-44b7-b1d8-5d083c2f35a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ages
+    - node.type.product
+id: node.product.field_ages
+field_name: field_ages
+entity_type: node
+bundle: product
+label: Ages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,27 @@
+uuid: cfc94699-a4e3-41d7-879c-c4ae8d5a4f20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_install
+    - node.type.product
+  module:
+    - file
+id: node.product.field_install
+field_name: field_install
+entity_type: node
+bundle: product
+label: Specification
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: spec
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menus %}
+
+{%
+set nav_classes = [
+  'nav',
+  menu_name == 'main' ? 'navbar-nav',
+  menu_name == 'main-right' ? 'navbar-nav',
+  menu_name == 'footer' ? 'nav-pills',
+]
+%}
+
+{% for parent, group in groups %}
+<ul class="nav navbar-nav navbar-right" data-parent="{{ parent }}">
+{% for item in group %}
+  {%
+    set item_classes = [
+      item.in_active_trail ? 'active',
+      item.is_expanded ? 'expanded dropdown'
+    ]
+  %}
+  <li{{ item.attributes.addClass(item_classes) }}>
+    <a href="{{ item.url }}">{{ item.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+{% endfor %}

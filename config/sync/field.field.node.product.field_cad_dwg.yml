@@ -1,0 +1,27 @@
+uuid: a8c18378-7268-48ad-a33c-ac5e2d1459f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cad_dwg
+    - node.type.product
+  module:
+    - file
+id: node.product.field_cad_dwg
+field_name: field_cad_dwg
+entity_type: node
+bundle: product
+label: '2D DWG'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: cads
+  file_extensions: dwg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

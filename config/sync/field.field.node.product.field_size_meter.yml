@@ -1,0 +1,19 @@
+uuid: a1e5da89-ce95-411c-a084-3e9cf9dd8f43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_size_meter
+    - node.type.product
+id: node.product.field_size_meter
+field_name: field_size_meter
+entity_type: node
+bundle: product
+label: 'Size (m)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

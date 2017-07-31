@@ -1,0 +1,31 @@
+uuid: b01729dc-fd89-425d-8960-bea69d7fb308
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cover_block:0f7ab788-aec1-4dbb-8816-9b7dce5ac220'
+  module:
+    - block_content
+    - system
+  theme:
+    - red
+id: news
+theme: red
+region: content_header
+weight: -4
+provider: null
+plugin: 'block_content:0f7ab788-aec1-4dbb-8816-9b7dce5ac220'
+settings:
+  id: 'block_content:0f7ab788-aec1-4dbb-8816-9b7dce5ac220'
+  label: News
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/news\r\n"
+    negate: false
+    context_mapping: {  }

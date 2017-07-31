@@ -1,0 +1,16 @@
+uuid: ecbf5c23-e79f-4f35-951b-24e82e91a72a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cover_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: block_content.cover_block
+target_entity_type_id: block_content
+target_bundle: cover_block
+default_langcode: site_default
+language_alterable: false

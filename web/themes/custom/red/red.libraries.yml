@@ -1,0 +1,21 @@
+base:
+  version: VERSION
+  css:
+    theme:
+      assets/css/red.style.css: {}
+  js:
+    bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js: {}
+    assets/js/red.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+finder:
+  version: VERSION
+  js:
+    finder/dist/inline.a242519f627752a87412.bundle.js: {}
+    finder/dist/polyfills.390430c4ead4f28c5687.bundle.js: {}
+    finder/dist/styles.d41d8cd98f00b204e980.bundle.css: {}
+    finder/dist/vendor.b64584ac727fc2e3af86.bundle.js: {}
+    finder/dist/main.747cc54fb543670d48e3.bundle.js: {}

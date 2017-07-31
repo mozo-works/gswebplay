@@ -1,0 +1,6 @@
+uuid: aa7eb3e1-a304-400d-a6d0-45a494e1118a
+langcode: en
+status: true
+dependencies: {  }
+id: continent
+label: Continent

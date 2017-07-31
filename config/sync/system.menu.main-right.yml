@@ -1,0 +1,8 @@
+uuid: bb7bc863-322c-4854-9a0d-4c1981b26f1c
+langcode: en
+status: true
+dependencies: {  }
+id: main-right
+label: 'Main navigation (Right)'
+description: 'Site section links displayed on navbar right region'
+locked: false

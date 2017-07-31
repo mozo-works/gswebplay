@@ -1,0 +1,2 @@
+web/themes/custom/red/finder/dist/***
+web/themes/custom/red/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js

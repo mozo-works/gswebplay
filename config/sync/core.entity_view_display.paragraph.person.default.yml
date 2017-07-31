@@ -1,0 +1,54 @@
+uuid: b2ecb8bd-22df-462b-8ed6-6a05a1cc299a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.person.field_e_mail
+    - field.field.paragraph.person.field_name
+    - field.field.paragraph.person.field_skype
+    - field.field.paragraph.person.field_telephone
+    - field.field.paragraph.person.field_title
+    - paragraphs.paragraphs_type.person
+id: paragraph.person.default
+targetEntityType: paragraph
+bundle: person
+mode: default
+content:
+  field_e_mail:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_name:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_skype:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_telephone:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_title:
+    weight: 1
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,93 @@
+{
+  "name": "mozo-works/gsweb8",
+  "description": "Project template for Drupal 8 sites that adhere to 12 factor app guidelines.",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "package",
+      "package": [
+        {
+          "name": "jquery.cycle",
+          "version": "3.0.3-a",
+          "type": "drupal-library",
+          "dist": { "url": "https://github.com/malsup/cycle/archive/3.0.3-a.tar.gz", "type": "tar" }
+        },
+        {
+          "name": "jquery.imagesloaded",
+          "version": "4.1.1",
+          "type": "drupal-library",
+          "dist": { "url": "https://github.com/desandro/imagesloaded/archive/v4.1.1.tar.gz", "type": "tar" }
+        },
+        {
+          "name": "youtube",
+          "version": "2.1.0",
+          "type": "drupal-library",
+          "dist": { "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.0.tar.gz", "type": "tar" }
+        }
+      ]
+    }
+  ],
+  "require": {
+    "php": "~7",
+    "ext-gd": "*",
+    "composer/installers": "^1.0.20",
+    "drupal-composer/drupal-scaffold": "dev-master",
+    "cweagans/composer-patches": "~1.0",
+    "drupal/core": "8.3.0",
+    "drush/drush": "~8.0",
+    "vlucas/phpdotenv": "^2.3",
+    "drupal/radix": "~3.0",
+    "drupal/paragraphs": "1.0",
+    "drupal/ds": "~2.0",
+    "drupal/google_analytics": "^2.1.0",
+    "jquery.cycle": "*",
+    "jquery.imagesloaded": "*",
+    "drupal/ckeditor_youtube": "^1.0",
+    "youtube": "*",
+    "drupal/responsive_favicons": "^1.3"
+  },
+  "require-dev": {
+    "drupal/console": "~1.0.0",
+    "drupal/devel": "1.x-dev"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "post-install-cmd": [
+      "Shomeya\\composer\\ScriptHandler::buildScaffold",
+      "Shomeya\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "Shomeya\\composer\\ScriptHandler::buildScaffold",
+      "Shomeya\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": [ "drupal/core" ],
+      "web/modules/contrib/{$name}": [ "type:drupal-module" ],
+      "web/profiles/contrib/{$name}": [ "type:drupal-profile" ],
+      "web/themes/contrib/{$name}": [ "type:drupal-theme" ],
+      "drush/contrib/{$name}": [ "type:drupal-drush" ],
+      "web/libraries/{$name}": [ "type:drupal-library" ]
+    },
+    "enable-patching": true
+  }
+}

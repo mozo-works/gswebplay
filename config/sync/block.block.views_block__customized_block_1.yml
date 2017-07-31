@@ -1,0 +1,30 @@
+uuid: cd67e1a6-c139-47fb-8bb3-8d28fff6c500
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.customized
+  module:
+    - system
+    - views
+  theme:
+    - red
+id: views_block__customized_block_1
+theme: red
+region: content_header
+weight: -6
+provider: null
+plugin: 'views_block:customized-block_1'
+settings:
+  id: 'views_block:customized-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /products/customized
+    negate: false
+    context_mapping: {  }
