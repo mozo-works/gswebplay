@@ -12,26 +12,30 @@
     },
     {
       "type": "package",
-      "package": [
-        {
-          "name": "jquery.cycle",
-          "version": "3.0.3-a",
-          "type": "drupal-library",
-          "dist": { "url": "https://github.com/malsup/cycle/archive/3.0.3-a.tar.gz", "type": "tar" }
-        },
-        {
-          "name": "jquery.imagesloaded",
-          "version": "4.1.1",
-          "type": "drupal-library",
-          "dist": { "url": "https://github.com/desandro/imagesloaded/archive/v4.1.1.tar.gz", "type": "tar" }
-        },
-        {
-          "name": "youtube",
-          "version": "2.1.0",
-          "type": "drupal-library",
-          "dist": { "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.0.tar.gz", "type": "tar" }
-        }
-      ]
+      "package": {
+        "name": "jquery.cycle",
+        "version": "3.0.3-a",
+        "type": "drupal-library",
+        "dist": { "url": "https://github.com/malsup/cycle/archive/3.0.3-a.tar.gz", "type": "tar" }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "jquery.imagesloaded",
+        "version": "4.1.1",
+        "type": "drupal-library",
+        "dist": { "url": "https://github.com/desandro/imagesloaded/archive/v4.1.1.tar.gz", "type": "tar" }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "youtube",
+        "version": "2.1.0",
+        "type": "drupal-library",
+        "dist": { "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.0.tar.gz", "type": "tar" }
+      }
     }
   ],
   "require": {
