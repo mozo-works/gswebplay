@@ -8856,7 +8856,8 @@ footer {
         display: inline-block;
         width: 228px; } }
 
-.article--full h2 {
+.article--full h2,
+.project--full h2 {
   margin-top: 80px;
   margin-bottom: 20px;
   color: #c5241f;
@@ -9600,3 +9601,5 @@ footer {
   background: #f6f6f6; }
 
 /*# sourceMappingURL=red.style.css.map */
+
+
