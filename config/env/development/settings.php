@@ -116,7 +116,8 @@ $settings['skip_permissions_hardening'] = TRUE;
  */
 $settings['trusted_host_patterns'] = array(
   '^localhost$',
-  '^127.0.0.1$'
+  '^127.0.0.1$',
+  '^gsweb.mozo.kr$'
 );
 
 /**

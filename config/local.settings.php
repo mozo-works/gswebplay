@@ -30,5 +30,5 @@ if (!empty($hash_salt)) {
 $settings['trusted_host_patterns'] = array(
   '^localhost$',
   '^127.0.0.1$',
-  '^gsweb8.cworkers.kr$'
+  '^gsweb.mozo.kr$'
 );
