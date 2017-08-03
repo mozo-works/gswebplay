@@ -94,7 +94,7 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
         $vars['cover_title'] = $parent = $value;
         break;
       case 2:
-        $vars['cover_description'] = $value;
+        $vars['cover_description'] = '<p>' . $value . '</p>';
         break;
     }
   }
@@ -104,6 +104,13 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
   $current_uri = \Drupal::request()->getRequestUri();
   if ($current_uri == '/projects') {
     $vars['cover_title'] = 'Projects';
+    // 관리자인 경우 프로젝트 추가 버튼을 보여줍니다.
+    $user = \Drupal::currentUser()->getRoles();
+    if(in_array("administrator", $user)) {
+      $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; new project</a>';
+      $vars['cover_description'] .= $button;
+    }
+    kint($vars['cover_description']);
   }
 }
 
