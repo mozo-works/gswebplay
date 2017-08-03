@@ -21,3 +21,10 @@ npm -g i gulp-cli bower
 cd { project_root }/web/themes/contrib/radix && bower i
 cd { project_root }/web/themes/custom/red/ && npm run setup && gulp
 ```
+
+
+```
+# after upgrade to core 8.3.6
+drush sql-query "DELETE FROM key_value WHERE collection='system.schema' AND name='layout_plugin';"
+
+```
