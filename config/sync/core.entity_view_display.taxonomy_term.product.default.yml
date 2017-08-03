@@ -22,12 +22,14 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_description:
     weight: 2
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
 hidden:
   description: true
   field_thumb_image: true

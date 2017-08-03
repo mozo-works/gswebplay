@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.product.field_cover_image
     - field.field.taxonomy_term.product.field_description
+    - field.field.taxonomy_term.product.field_thumb_image
     - taxonomy.vocabulary.product
   module:
     - image
@@ -22,12 +23,15 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_description:
     weight: 2
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
 hidden:
   description: true
+  field_thumb_image: true
   langcode: true

@@ -25,12 +25,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_color:
     weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
   field_image:
     weight: 1
     label: hidden
@@ -39,12 +41,14 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_image_location:
     type: list_default
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_title:
     weight: 2
     label: hidden
@@ -52,6 +56,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
   uid: true

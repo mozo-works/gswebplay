@@ -8,7 +8,7 @@ dependencies:
     - red
 id: pagetitle
 theme: red
-region: '-1'
+region: navbar_branding
 weight: -5
 provider: null
 plugin: page_title_block

@@ -75,6 +75,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: right
   field_ages:
     weight: 4
     label: inline
@@ -82,12 +83,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: right
   field_cad_dwg:
     weight: 12
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: file_url_plain
+    region: right
   field_capacity:
     weight: 5
     label: inline
@@ -95,6 +98,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: right
   field_category:
     weight: 2
     label: visually_hidden
@@ -102,12 +106,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: right
   field_cert:
     weight: 10
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: file_url_plain
+    region: right
   field_fall_height:
     weight: 9
     label: inline
@@ -115,6 +121,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: right
   field_image:
     weight: 0
     label: visually_hidden
@@ -144,12 +151,14 @@ content:
       ds:
         ds_limit: '3'
     type: slideshow
+    region: left
   field_install:
     weight: 11
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: file_url_plain
+    region: right
   field_size_inch:
     weight: 7
     label: above
@@ -157,6 +166,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: right
   field_size_meter:
     weight: 6
     label: above
@@ -164,6 +174,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: right
   field_use_zone:
     weight: 8
     label: above
@@ -171,6 +182,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: right
 hidden:
   field_cover: true
   langcode: true

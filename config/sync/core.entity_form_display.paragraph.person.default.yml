@@ -21,6 +21,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_name:
     weight: 0
     settings:
@@ -28,6 +29,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_skype:
     weight: 4
     settings:
@@ -35,6 +37,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_telephone:
     weight: 2
     settings:
@@ -42,6 +45,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_title:
     weight: 1
     settings:
@@ -49,12 +53,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   status:
     type: boolean_checkbox
     weight: 0
     settings:
       display_label: true
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   uid: true
