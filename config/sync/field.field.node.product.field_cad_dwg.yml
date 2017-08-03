@@ -20,7 +20,7 @@ default_value_callback: ''
 settings:
   file_directory: cads
   file_extensions: dwg
-  max_filesize: ''
+  max_filesize: '10 MB'
   description_field: false
   handler: 'default:file'
   handler_settings: {  }
