@@ -22,7 +22,8 @@ Drupal.behaviors.red_navbar_secondary = {
 
       // Helper function to show the dropdown.
       function show() {
-        if (!$(dropdown).hasClass('open')) {
+        if ($(dropdown).hasClass('open')) {
+          console.log('show!!');
           var menuid = $(dropdown).data('menuid');
           var target = $('[data-parent="' + menuid + '"]','#navbar-secondary');
           if (mq.matches) $('#navbar-secondary').show();
@@ -46,6 +47,7 @@ Drupal.behaviors.red_navbar_secondary = {
 
       // Show dropdown on hover and focus.
       $(this).on('mouseenter.red.dropdown', function(e) {
+        console.log('mouseenter!!');
         show();
       });
       $('#site-header').on('mouseleave.red.dropdown', function(e) {

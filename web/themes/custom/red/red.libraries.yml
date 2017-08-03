@@ -4,7 +4,7 @@ base:
     theme:
       assets/css/red.style.css: {}
   js:
-    bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js: {}
+    //maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js: { type: external, minified: true }
     assets/js/red.script.js: {}
   dependencies:
     - core/jquery
