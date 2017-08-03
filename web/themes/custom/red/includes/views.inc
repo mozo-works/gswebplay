@@ -99,6 +99,12 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
     }
   }
   $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($vars['cover_title'])));
+
+  // 프로젝트일 경우 제목을 수정합니다.
+  $current_uri = \Drupal::request()->getRequestUri();
+  if ($current_uri == '/projects') {
+    $vars['cover_title'] = 'Projects';
+  }
 }
 
 /**

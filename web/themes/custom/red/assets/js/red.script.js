@@ -111,6 +111,12 @@ Drupal.behaviors.red_make_product_box_link = {
         location.href = url2;
       });
     });
+    $('.box', '.view-id-projects.view-display-id-page_1').once('red-product-box').each(function(){
+      var url2 = $(this).find('.views-field-title a').attr('href');
+      $(this).on('click touchend', function(){
+        location.href = url2;
+      });
+    });
     $('.box', '.view--taxonomy-term--page-1 .col-md-4').once('red-product-box').each(function(){
       var url = $(this).find('.product__field-cover > a').attr('href');
       $(this).on('click touchend', function(){

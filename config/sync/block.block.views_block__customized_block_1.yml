@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /products/customized
+    pages: "/products/customized\r\n/projects\r\n/projects/*"
     negate: false
     context_mapping: {  }
