@@ -110,7 +110,6 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
       $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; new project</a>';
       $vars['cover_description'] .= $button;
     }
-    kint($vars['cover_description']);
   }
 }
 
