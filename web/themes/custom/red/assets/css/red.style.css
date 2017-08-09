@@ -9627,6 +9627,7 @@ footer {
 .project__field-image .field__items img {
   margin: 15px 0;
   max-width: 100%;
+  height: auto;
 }
 
 .project--full {
