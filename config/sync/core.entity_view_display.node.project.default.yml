@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.project.field_location
     - field.field.node.project.field_slides
     - field.field.node.project.field_video
+    - image.style.project_half
     - node.type.project
   module:
     - ds
@@ -24,7 +25,7 @@ content:
     weight: 4
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: project_half
       image_link: ''
     third_party_settings:
       ds:

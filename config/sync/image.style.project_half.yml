@@ -1,0 +1,14 @@
+uuid: 64068971-1f2e-492b-93d1-30871b646b48
+langcode: en
+status: true
+dependencies: {  }
+name: project_half
+label: 'project half (520x390)'
+effects:
+  1f9a44f2-a9e1-4975-bf4b-038ae043c315:
+    uuid: 1f9a44f2-a9e1-4975-bf4b-038ae043c315
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 520
+      height: 390
