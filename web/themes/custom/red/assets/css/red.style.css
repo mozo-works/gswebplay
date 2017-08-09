@@ -9623,11 +9623,15 @@ footer {
 /*# sourceMappingURL=red.style.css.map */
 
 .owl-slider-wrapper,
-.project__field-video .field__items,
-.project__field-image .field__items img {
+.project__field-video .col-md-6,
+.project__field-image .col-md-6 img {
   margin: 15px 0;
   max-width: 100%;
   height: auto;
+}
+
+.project__field-image {
+  margin-top: 15px;
 }
 
 .project--full {
