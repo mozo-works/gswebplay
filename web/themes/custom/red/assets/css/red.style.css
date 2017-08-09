@@ -9628,3 +9628,20 @@ footer {
   margin: 15px 0;
   max-width: 100%;
 }
+
+.project--full {
+  padding: 0 70px;
+}
+
+.project--full .content-footer {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.project--full .content-footer .btn-back {
+  background: #bbbbbb;
+  padding: 16px 56px;
+  font-size: 18px;
+  color: #fff;
+}
+
