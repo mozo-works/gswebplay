@@ -195,7 +195,7 @@
         });
       }
       else {
-        $(window).load(function () {
+        $(window).on('load', function () {
           $('.field-slideshow').each(function () {
             rebuild_max_height($(this));
           });
