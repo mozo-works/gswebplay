@@ -37,7 +37,8 @@ function red_preprocess_views_view_grouping__products__page_1(&$vars) {
   if (!empty($nodes->item(0))) {
     $parent_term_id = str_replace('/taxonomy/term/', '', $nodes->item(0)->getAttribute('href'));
   }
-  if ( (int) $parent_term_id > 0 ) {
+  // /products 화면에서 customized 그룹을 표시합니다.
+  if ( (int) $parent_term_id > 0 &&  (int) $parent_term_id != 3) {
     $vars['hide'] = " hide";
   }
 }
