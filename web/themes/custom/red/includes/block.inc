@@ -29,7 +29,7 @@ function red_preprocess_block(&$vars) {
     $fid = !empty($f_array['target_id']) ? $f_array['target_id'] : '';
     if ($fid) {
       $image = \Drupal\file\Entity\File::load($fid);
-      $vars['inline_css'] = 'background: url(' . $image->url() . ') no-repeat; background-size: cover';
+      $vars['inline_css'] = 'background: url(' . str_replace('http://', '//', $image->url()) . ') no-repeat; background-size: cover';
     }
   }
 
