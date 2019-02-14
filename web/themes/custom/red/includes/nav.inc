@@ -18,18 +18,3 @@ function red_theme_suggestions_menu_alter(array &$suggestions, array $vars) {
     $suggestions[] = $vars['theme_hook_original'] . '__' . $hook;
   }
 }
-
-function red_preprocess_menu(&$vars) {
-  if (!empty($vars['attributes']['data-region']) && $vars['attributes']['data-region'] == 'navbar_secondary') {
-    if (in_array($vars['menu_name'], ['main', 'main-right'])) {
-      $groups = [];
-      foreach ($vars['items'] as $key => $item) {
-        $parent = $vars['items'][$key]['original_link']->getParent();
-        $groups[$parent][$key] = $item;
-      }
-      krsort($groups, SORT_STRING);
-      $vars['groups'] = $groups;
-    }
-  }
-
-}

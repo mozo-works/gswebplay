@@ -12,7 +12,6 @@ regions:
   navbar_branding: 'Navbar branding'
   navbar_left:  'Navbar left'
   navbar_right: 'Navbar right'
-  navbar_secondary: "Navbar Secondary"
   content_header: 'Content header'
   content: Content
   footer: Footer
