@@ -20,22 +20,17 @@ Drupal.behaviors.red_navbar_secondary = {
     $context.find('.dropdown').once('red_navbar_secondary').each(function () {
       var dropdown = this;
 
-      // Helper function to show the dropdown.
-      function show() {
-        if ($(dropdown).hasClass('open')) {
-          console.log('show!!');
-          var menuid = $(dropdown).data('menuid');
-          var target = $('[data-parent="' + menuid + '"]','#navbar-secondary');
-          if (mq.matches) $('#navbar-secondary').show();
-          $('#navbar-secondary .navbar-nav').hide();
-          target.show();
-          $('.dropdown', '#navbar-primary .navbar-nav').removeClass('open');
-          $(dropdown).addClass('open');
-        }
-      }
-
-      // Helper function to hide the dropdown.
-      function hide() {
+      // Show dropdown on hover and focus.
+      $(this).on('mouseenter.red.dropdown', function(e) {
+        var menuid = $(dropdown).data('menuid');
+        var target = $('[data-parent="' + menuid + '"]','#navbar-secondary');
+        if (mq.matches) $('#navbar-secondary').show();
+        $('#navbar-secondary .navbar-nav').hide();
+        target.show();
+        $('.dropdown', '#navbar-primary .navbar-nav').removeClass('open');
+        $(dropdown).addClass('open');
+      });
+      $('#site-header').on('mouseleave.red.dropdown', function(e) {
         if ($(dropdown).hasClass('open')) {
           var menuid = $(dropdown).data('menuid');
           var target = $('[data-parent="' + menuid + '"]','#navbar-secondary');
@@ -43,15 +38,6 @@ Drupal.behaviors.red_navbar_secondary = {
           target.hide();
           $(dropdown).removeClass('open');
         }
-      }
-
-      // Show dropdown on hover and focus.
-      $(this).on('mouseenter.red.dropdown', function(e) {
-        console.log('mouseenter!!');
-        show();
-      });
-      $('#site-header').on('mouseleave.red.dropdown', function(e) {
-        hide();
       });
 
       $(this).on('keydown.red.dropdown', function(e) {

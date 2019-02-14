@@ -1238,8 +1238,6 @@
 
         var _ = this;
 
-        console.log(_.options);
-
         if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
             $('li', _.$dots).on('click.slick', {
                 message: 'index'
