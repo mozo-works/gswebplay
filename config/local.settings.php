@@ -32,3 +32,18 @@ $settings['trusted_host_patterns'] = array(
   '^127.0.0.1$',
   '^gsweb.mozo.kr$'
 );
+
+$config['config_split.config_split.config_dev']['status'] = FALSE;
+if(getenv('DRUPAL_ENV') == 'development') {
+  $config['config_split.config_split.config_dev']['status'] = TRUE;
+}
+
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+$settings['cache']['bins']['page'] = 'cache.backend.null';
+$settings['extension_discovery_scan_tests'] = FALSE;
