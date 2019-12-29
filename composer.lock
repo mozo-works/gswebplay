@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13bb33c7277d8fab91244a3779c6ee66",
+    "content-hash": "dd52ff15a70e3cf598c10439b02dec2c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2931,7 +2931,7 @@
             "time": "2018-09-25T20:59:41+00:00"
         },
         {
-            "name": "fonini/ckeditor-youtube-plugin",
+            "name": "fonini/youtube",
             "version": "2.1.0",
             "dist": {
                 "type": "tar",

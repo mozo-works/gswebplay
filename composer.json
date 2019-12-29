@@ -31,7 +31,7 @@
     {
       "type": "package",
       "package": {
-        "name": "fonini/ckeditor-youtube-plugin",
+        "name": "fonini/youtube",
         "version": "2.1.0",
         "type": "drupal-library",
         "dist": { "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.0.tar.gz", "type": "tar" }
@@ -54,7 +54,7 @@
     "malsup/jquery.cycle": "*",
     "desandro/jquery.imagesloaded": "^4.1",
     "drupal/ckeditor_youtube": "^1.0",
-    "fonini/ckeditor-youtube-plugin": "*",
+    "fonini/youtube": "*",
     "drupal/responsive_favicons": "^1.3",
     "drupal/video_embed_field": "^1.5"
   },
