@@ -10,3 +10,16 @@
 .view--products.view-display-id-page_1 #customized.grouping .card:hover .card-overlay {
   background-color: #f8ae1c !important;
 }
+
+.view--taxonomy-term.view-display-id-attachment_1 .view__row.col-md-4 .box h2,
+.view--taxonomy-term.view-display-id-block_1 .view__row.col-md-4 .box h2,
+.view--taxonomy-term.view-display-id-page_1 .view__row.col-md-4 .box h2 {
+  font-size: 24px;
+  padding-top: 10px;
+}
+
+.view--taxonomy-term.view-display-id-attachment_1 .view__row.col-md-4 .box,
+.view--taxonomy-term.view-display-id-block_1 .view__row.col-md-4 .box,
+.view--taxonomy-term.view-display-id-page_1 .view__row.col-md-4 .box {
+  height: 350px;
+}
