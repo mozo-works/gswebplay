@@ -23,3 +23,7 @@
 .view--taxonomy-term.view-display-id-page_1 .view__row.col-md-4 .box {
   height: 350px;
 }
+
+.path--taxonomy-term-29 .term-full-header-cover {
+  background-position: right !important;
+}
