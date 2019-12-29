@@ -1,0 +1,15 @@
+uuid: 545fc85c-4532-4713-ab62-69a707e288ae
+langcode: en
+status: true
+dependencies: {  }
+name: project_full
+label: 'Projec full (1000x720)'
+effects:
+  742c146d-7528-4446-88c3-fe3e5c24fbe1:
+    uuid: 742c146d-7528-4446-88c3-fe3e5c24fbe1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 720
+      anchor: center-center

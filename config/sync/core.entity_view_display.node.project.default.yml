@@ -44,7 +44,7 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: project_full
       image_link: ''
       items: '1'
       itemsDesktop: '[1199,4]'

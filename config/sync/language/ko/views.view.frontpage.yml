@@ -1,9 +1,6 @@
 display:
   default:
     display_options:
-      empty:
-        area_text_custom:
-          content: '첫 화면에 표시할 콘텐츠를 아직 작성하지 않았습니다.'
       exposed_form:
         options:
           submit_button: 적용

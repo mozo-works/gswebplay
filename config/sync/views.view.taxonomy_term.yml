@@ -505,8 +505,8 @@ display:
           plugin_id: node_term_data
         parent:
           id: parent
-          table: taxonomy_term_hierarchy
-          field: parent
+          table: taxonomy_term__parent
+          field: parent_target_id
           relationship: term_node_tid
           group_type: group
           admin_label: Parent
@@ -515,8 +515,8 @@ display:
       arguments:
         parent:
           id: parent
-          table: taxonomy_term_hierarchy
-          field: parent
+          table: taxonomy_term__parent
+          field: parent_target_id
           relationship: term_node_tid
           group_type: group
           admin_label: ''
