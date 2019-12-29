@@ -87,31 +87,31 @@ Drupal.behaviors.red_make_product_box_link = {
   attach: function (context) {
     $('.box', '.product-covers').once('red-product-box').each(function(){
       var url = $(this).find('h3 > a').attr('href');
-      $(this).on('click touchend', function(){
+      $(this).on('click', function(){
         location.href = url;
       });
     });
     $('.box', '.view-id-articles.view-display-id-page_1').once('red-product-box').each(function(){
       var url2 = $(this).find('.views-field-title a').attr('href');
-      $(this).on('click touchend', function(){
+      $(this).on('click', function(){
         location.href = url2;
       });
     });
     $('.box', '.view-id-projects.view-display-id-page_1').once('red-product-box').each(function(){
       var url2 = $(this).find('.views-field-title a').attr('href');
-      $(this).on('click touchend', function(){
+      $(this).on('click', function(){
         location.href = url2;
       });
     });
     $('.box', '.view--taxonomy-term--page-1 .col-md-4').once('red-product-box').each(function(){
       var url = $(this).find('.product__field-cover > a').attr('href');
-      $(this).on('click touchend', function(){
+      $(this).on('click', function(){
         location.href = url;
       });
     });
     $('.box', '.paragraph--type--image-card').once('red-product-box').each(function(){
       var url = $(this).find('.image-card__field-link > a').attr('href');
-      $(this).on('click touchend', function(){
+      $(this).on('click', function(){
         location.href = url;
       });
     });

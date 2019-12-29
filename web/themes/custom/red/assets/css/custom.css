@@ -1,0 +1,12 @@
+
+.view--products.view-display-id-page_1 #customized.grouping .header-cover .layer {
+  background-color: #f8ae1c;
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  opacity: .8;
+}
+
+.view--products.view-display-id-page_1 #customized.grouping .card:hover .card-overlay {
+  background-color: #f8ae1c !important;
+}
