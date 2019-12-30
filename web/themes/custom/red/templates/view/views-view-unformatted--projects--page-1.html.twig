@@ -15,6 +15,13 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+{% if title %}
+  <div class="group-header clearfix text-center">
+    <h2 class="group-title">{{ title }}</h2>
+    <hr class="divider">
+  </div>
+{% endif %}
+<div class="clearfix">
 {% for row in rows %}
   {%
     set row_classes = [
@@ -27,3 +34,4 @@
     </div>
   </div>
 {% endfor %}
+</div>
