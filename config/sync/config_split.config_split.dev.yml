@@ -7,11 +7,16 @@ label: development
 description: ''
 folder: ../config/dev
 module:
+  devel: 0
   kint: 0
   stage_file_proxy: 0
   views_ui: 0
 theme: {  }
-blacklist: {  }
+blacklist:
+  - devel.settings
+  - devel.toolbar.settings
+  - system.menu.devel
+  - tour.tour.views-ui
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: false
