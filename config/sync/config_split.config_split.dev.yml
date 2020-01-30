@@ -12,12 +12,9 @@ module:
   stage_file_proxy: 0
   views_ui: 0
 theme: {  }
-blacklist:
-  - devel.settings
-  - devel.toolbar.settings
-  - system.menu.devel
-  - tour.tour.views-ui
-graylist: {  }
+blacklist: {  }
+graylist:
+  - core.extension
 graylist_dependents: true
-graylist_skip_equal: false
+graylist_skip_equal: true
 weight: 0
