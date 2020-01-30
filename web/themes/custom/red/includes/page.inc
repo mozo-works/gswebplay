@@ -70,9 +70,4 @@ function red_preprocess_html(&$vars) {
   if (isset($path_class)) {
     $vars['attributes']['class'][] = $path_class;
   }
-  if ('/node/18' == $current_path) {
-    $vars['page']['#attached']['html_head'][] = [
-      [ '#tag' => 'base', '#attributes' => [ 'href' => '/finder'] ], 'base'
-    ];
-  }
 }
