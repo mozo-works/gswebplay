@@ -1,0 +1,58 @@
+.visually-hidden {
+  display: none !important;
+}
+
+.content {
+  padding: 20px;
+  width: 1140px;
+  top: 0;
+  bottom: 0;
+  left: 320px;
+  z-index: 1000;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+}
+
+.paragraph--type--address .box .address__field-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c5241f;
+  margin-bottom: 20px;
+}
+
+.paragraph--type--address .box .address__field-address .field__label,
+.paragraph--type--address .box .address__field-telephone .field__label,
+.paragraph--type--address .box .address__field-fax .field__label,
+.paragraph--type--address .box .address__field-e-mail .field__label {
+  color: #c5241f;
+}
+
+.paragraph--type--address .box .address__field-address .field__item,
+.paragraph--type--address .box .address__field-telephone .field__item,
+.paragraph--type--address .box .address__field-fax .field__item,
+.paragraph--type--address .box .address__field-e-mail .field__item {
+  display: inline-block;
+}
+
+.paragraph--type--person .box {
+    font-size: 16px;
+}
+
+.paragraph--type--person .box .person__field-name,
+.paragraph--type--person .box .person__field-title {
+  display: inline;
+}
+
+.paragraph--type--person .box .person__field-name .field__item,
+.paragraph--type--person .box .person__field-title .field__item {
+  font-weight: bold;
+  color: #c5241f;
+}
+
+.field__items >.field__item {
+  width: 100%;
+  clear: both;
+  margin: 1rem 0;
+}

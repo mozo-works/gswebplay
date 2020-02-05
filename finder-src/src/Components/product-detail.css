@@ -1,0 +1,41 @@
+h2 {
+  color: #c5241f;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+div[class^="product__"] {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.field__label {
+  color: #bbb;
+  display: inline-block;
+  width: 176px;
+  vertical-align: top;
+}
+
+.field__item {
+  display: inline-block;
+  color: #4a4a4a;
+}
+
+.btn-download {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 17px 23px;
+  background-color: #bbb;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: background .5s ease-in-out;
+}
+
+.btn-download:hover {
+  text-decoration: none;
+  background-color: #c5241f;
+  color: #fff;
+}
