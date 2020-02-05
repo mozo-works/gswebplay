@@ -1,1 +1,1 @@
-rsync -avzh --delete --include-from './include.txt' --exclude-from './exclude.txt' ../ gsweb17:~/gswebplay.com
+rsync -avzh --delete --exclude-from './exclude.txt' ../web/finder gsweb:/var/www/gswebplay/web/
