@@ -6,6 +6,8 @@ import { HashRouter as Router, Switch, Route, NavLink, Redirect} from "react-rou
 import StaticPage from './StaticPage.jsx'
 import ProductCategory from './ProductCategory.jsx'
 
+const $ = document.querySelector.bind(document)
+
 const Sidebar1 = styled('aside')`
   flex: 0 0 160px; overflow-x: hidden;
 `
@@ -56,8 +58,16 @@ export default class SidebarFirst extends Component {
     }
   }
 
+  componentDidMount() {
+    $('.menu-item-home').setAttribute('href', '/')
+    $('.menu-item-home').onclick = function(e) {
+      e.preventDefault()
+      window.location.href= "/"
+    }
+  }
+
   render() {
-    const { menu, routes } = this.props;
+    const { menu, routes } = this.props
     return (
       <Router>
         <Route exact path="/"><Redirect to="/standard/net-climber/19" /></Route>
@@ -84,13 +94,6 @@ export default class SidebarFirst extends Component {
 
 const MenuItem = (data) => {
   let slug = slugify(data.title).toLowerCase()
-  if(slug === 'home') {
-    return (
-      <PrimaryMenuItem>
-        <PrimaryMenuItemLink href="/" slug={slug} to={data.link} activeClassName="active" className={ `nav-link menu-item-${slug}` }>{data.title}</PrimaryMenuItemLink>
-      </PrimaryMenuItem>
-    )
-  }
   return (
     <PrimaryMenuItem>
       <PrimaryMenuItemLink slug={slug} to={data.link} activeClassName="active" className={ `nav-link menu-item-${slug}` }>{data.title}</PrimaryMenuItemLink>
@@ -101,4 +104,5 @@ const MenuItem = (data) => {
 const ComponentByType = (route, match) => {
   if (route.type === 'page') return <StaticPage id={route.id} match={match} />
   if (route.type === 'term') return <ProductCategory id={route.id} match={match} />
+  return <></>
 }
