@@ -39,5 +39,9 @@
       "last 1 safari version",
       "ie 11"
     ]
+  },
+  "resolutions": {
+    "**/**/acorn": "^7.1.1",
+    "**/**/minimist": "^1.2.2"
   }
 }
