@@ -26,6 +26,10 @@
 # Ignore project specific files.
 .env
 /bin
-/logs
-/dump
+*.log
+/dump/*
+!/dump/.gitkeep
 deployment-config.json
+.vagrant
+/.editorconfig
+/.gitattributes

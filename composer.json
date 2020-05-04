@@ -1,5 +1,5 @@
 {
-  "name": "mozo-works/gsweb8",
+  "name": "mozo-works/gswebplay",
   "description": "Project template for Drupal 8 sites that adhere to 12 factor app guidelines.",
   "type": "project",
   "license": "GPL-2.0+",
@@ -41,12 +41,10 @@
   "require": {
     "php": "~7",
     "ext-gd": "*",
-    "composer/installers": "^1.0.20",
-    "drupal-composer/drupal-scaffold": "dev-master",
-    "cweagans/composer-patches": "~1.0",
-    "drupal/core": "8.6.18",
-    "drush/drush": "*",
-    "vlucas/phpdotenv": "^2.3",
+    "composer/installers": "^1.2",
+    "drupal/core-composer-scaffold": "^8.8",
+    "drupal/core-recommended": "^8.8",
+    "drush/drush": "^10",
     "drupal/radix": "~3.0",
     "drupal/paragraphs": "1.6",
     "drupal/ds": "~3.0",
@@ -61,37 +59,29 @@
   },
   "require-dev": {
     "drupal/devel": "^2.1",
-    "drupal/stage_file_proxy": "^1.0@RC"
+    "drupal/stage_file_proxy": "^1"
   },
   "conflict": {
     "drupal/drupal": "*"
   },
   "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": [
-      "Shomeya\\composer\\ScriptHandler::buildScaffold",
-      "Shomeya\\composer\\ScriptHandler::createRequiredFiles"
-    ],
-    "post-update-cmd": [
-      "Shomeya\\composer\\ScriptHandler::buildScaffold",
-      "Shomeya\\composer\\ScriptHandler::createRequiredFiles"
-    ]
-  },
-  "config": {
-    "bin-dir": "bin/"
-  },
-  "autoload": {
-    "classmap": [
-      "scripts/composer/ScriptHandler.php"
+    "s": [
+      "Composer\\Config::disableProcessTimeout",
+      "drush rs 0.0.0.0"
     ]
   },
   "extra": {
+    "drupal-scaffold": {
+      "locations": {
+          "web-root": "web/"
+      }
+    },
     "installer-paths": {
       "web/core": [ "drupal/core" ],
       "web/modules/contrib/{$name}": [ "type:drupal-module" ],
       "web/profiles/contrib/{$name}": [ "type:drupal-profile" ],
       "web/themes/contrib/{$name}": [ "type:drupal-theme" ],
-      "drush/contrib/{$name}": [ "type:drupal-drush" ],
+      "drush/Commands/contrib/{$name}": [ "type:drupal-drush" ],
       "web/libraries/{$name}": [ "type:drupal-library" ]
     },
     "enable-patching": true
