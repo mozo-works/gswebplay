@@ -164,3 +164,5 @@ $settings['skip_permissions_hardening'] = TRUE;
   'prefix' => '',
   'collation' => 'utf8mb4_general_ci',
  ];
+
+ $conf['stage_file_proxy_origin'] = 'http://gswebplay.com';

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.project.field_location
     - field.field.node.project.field_slides
     - field.field.node.project.field_video
+    - field.field.node.project.field_year
     - node.type.project
   module:
     - user
@@ -28,4 +29,5 @@ hidden:
   field_location: true
   field_slides: true
   field_video: true
+  field_year: true
   langcode: true

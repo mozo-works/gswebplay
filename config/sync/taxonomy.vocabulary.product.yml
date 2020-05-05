@@ -5,5 +5,4 @@ dependencies: {  }
 name: Product
 vid: product
 description: 'Categories for product'
-hierarchy: 1
 weight: 0

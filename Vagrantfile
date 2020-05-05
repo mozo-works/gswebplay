@@ -5,9 +5,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "gbailey/amzn2"
   config.vm.network "forwarded_port", guest: 8888, host: 8888
   config.vm.network "forwarded_port", guest: 80, host: 8080
-  # config.vm.network "private_network", ip: "192.168.36.12"
-  # config.vm.synced_folder ".", "/vagrant", type: 'nfs', fsnotify: true, exclude: ['vendor', 'dump', 'node_modules']
-  config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", mount_options: ["dmode=777", "fmode=777"]
+  config.vm.network "private_network", ip: "192.168.36.12"
+  config.vm.synced_folder ".", "/vagrant", type: 'nfs', fsnotify: true, exclude: ['vendor', 'dump', 'node_modules']
+  # config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", mount_options: ["dmode=777", "fmode=777"]
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "gsweb"
@@ -22,17 +22,14 @@ Vagrant.configure("2") do |config|
 
     # install apache2, mariadb-10.2
     amazon-linux-extras enable lamp-mariadb10.2-php7.2
-    yum -y install git deltarpm mariadb-server httpd
+    yum -y install git deltarpm mariadb-server httpd patch
 
     # mysql_secure_installation
     mysql --user=root -e "DELETE FROM mysql.user WHERE User='';\
       DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');\
-      DROP DATABASE IF EXISTS test;\
-      DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';\
+      DROP DATABASE IF EXISTS test; DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';\
       CREATE DATABASE IF NOT EXISTS gswebplay CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\
-      USE gswebplay;
-      SOURCE /vagrant/dump/dev.sql;\
-      FLUSH PRIVILEGES;"
+      USE gswebplay; SOURCE /vagrant/dump/dev.sql; FLUSH PRIVILEGES;"
 
     # install php7.4
     # amazon-linux-extras disable docker lamp-mariadb10.2-php7.2
@@ -70,6 +67,5 @@ Vagrant.configure("2") do |config|
 
   # https://www.vagrantup.com/docs/vagrantfile/vagrant_settings.html#config-vagrant-plugins
   # config.vagrant.plugins = "vagrant-notify-forwarder"
-
 
 end

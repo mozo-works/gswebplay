@@ -32,6 +32,7 @@ module:
   help: 0
   history: 0
   image: 0
+  kint: 0
   language: 0
   layout_discovery: 0
   link: 0
@@ -42,6 +43,7 @@ module:
   owl: 0
   page_cache: 0
   path: 0
+  path_alias: 0
   quickedit: 0
   rdf: 0
   responsive_favicons: 0
@@ -56,6 +58,7 @@ module:
   tour: 0
   user: 0
   video_embed_field: 0
+  views_ui: 0
   menu_link_content: 1
   content_translation: 10
   views: 10
