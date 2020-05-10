@@ -1,0 +1,37 @@
+{
+	"folders": [
+    {
+      "name": "custom-theme-red",
+      "path": "web/themes/custom/red"
+    },
+    {
+      "name": "finder-src",
+      "path": "finder-src"
+    },
+    {
+      "name": "custom-modules",
+      "path": "web/modules/custom/"
+    },
+    {
+      "name": "contrib-modules",
+      "path": "web/modules/contrib/"
+    },
+    {
+      "name": "drupal-core",
+      "path": "web/core/"
+    },
+    {
+      "name": "config",
+      "path": "config"
+    },
+    {
+      "name": "dump",
+      "path": "dump"
+    },
+		{
+      "name": "project-root",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
