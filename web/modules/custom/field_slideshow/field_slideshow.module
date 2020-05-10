@@ -242,7 +242,7 @@ function template_preprocess_field_slideshow_pager(&$variables) {
           '#theme'           => 'image_formatter',
           '#item'            => $fc_image_item,
           '#item_attributes' => $thumbnail['attributes'],
-          '#url'             => "#",
+          '#url'             => Url::fromUserInput("##"),
         );
       }
       else {
@@ -250,7 +250,7 @@ function template_preprocess_field_slideshow_pager(&$variables) {
           '#theme'           => 'image_formatter',
           '#item'            => $item,
           '#item_attributes' => $thumbnail['attributes'],
-          '#url'             => "#",
+          '#url'             => Url::fromUserInput("##"),
         );
       }
       if ($thumbnail_style) {
