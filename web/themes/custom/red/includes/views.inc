@@ -134,3 +134,9 @@ function red_preprocess_views_view_unformatted__taxonomy_term(&$vars) {
       }
   }
 }
+
+function red_preprocess_views_view(&$vars) {
+  if($vars['id'] == 'taxonomy_term' && $vars['display_id'] == 'page_3') {
+    $vars['attributes']['class'][] = 'my-5';
+  }
+}

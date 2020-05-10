@@ -53,3 +53,25 @@
   margin-top: -30px;
   z-index: -1;
 }
+
+#views-form-taxonomy-term-page-3-4 .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.my-3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.my-5 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.container.block--tabs {
+  padding: 0;
+}

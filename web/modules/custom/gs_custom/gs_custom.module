@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -38,4 +39,29 @@ function gs_custom_theme() {
       ]
     ],
   ];
+}
+
+function gs_custom_menu_local_tasks_alter(&$data, $route_name) {
+  // ksm($route_name);
+  switch ($route_name) {
+    case 'entity.taxonomy_term.canonical':
+      $current_tid = \Drupal::RouteMatch()->getParameter('taxonomy_term')->id();
+      $data['tabs'][0]['view.taxonomy_term.page_3'] = [
+        '#theme' => 'menu_local_task',
+        '#link' => [
+          'title' => t('Sort'),
+          'url' => Url::fromRoute('view.taxonomy_term.page_3', ['arg_0' => $current_tid]),
+          'localized_options' => [
+            'attributes' => ['title' => t('Sort')]
+          ],
+        ]
+      ];
+    break;
+  }
+}
+
+function gs_custom_preprocess_block(&$vars) {
+  if($vars['plugin_id'] == 'local_tasks_block') {
+    $vars['attributes']['class'] += ['local-tasks', 'mt-3', 'container'];
+  }
 }
