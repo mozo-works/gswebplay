@@ -66,7 +66,7 @@
     },
     "require-dev": {
         "drupal/devel": "^2.1",
-        "drupal/stage_file_proxy": "^1"
+        "drupal/stage_file_proxy": "^1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -105,9 +105,8 @@
                 "system_update_8804": "https://www.drupal.org/files/issues/2020-04-23/core.system_update_8804.truncate_path_alias_tables.patch"
             },
             "drupal/draggableviews": {
-                "fix not_working_with_group_by-draggableviews": "https://www.drupal.org/files/issues/2019-12-11/not_working_with_group_by-draggableviews-2867348-36.patch"
+                "draggableviews_group_by": "https://www.drupal.org/files/issues/2019-12-11/not_working_with_group_by-draggableviews-2867348-36.patch"
             }
-
         }
     }
 }

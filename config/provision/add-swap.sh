@@ -6,6 +6,9 @@ swapsize=1024
 # does the swap file already exist?
 grep -q "swapfile" /etc/fstab
 
+sudo sysctl -w vm.swappiness=10
+sudo sysctl -w vm.vfs_cache_pressure=200
+
 # if not then create it
 if [ $? -ne 0 ]; then
 	echo 'swapfile not found. Adding swapfile.'

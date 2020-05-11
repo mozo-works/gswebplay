@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bff2951727b49cbb5b18ff76cc9db0e6",
+    "content-hash": "e3377fc5a2fe31ca3346501ffa3120d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2054,6 +2054,9 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "system_update_8804": "https://www.drupal.org/files/issues/2020-04-23/core.system_update_8804.truncate_path_alias_tables.patch"
                 }
             },
             "autoload": {
@@ -2240,7 +2243,7 @@
                     }
                 },
                 "patches_applied": {
-                    "fix not_working_with_group_by-draggableviews": "https://www.drupal.org/files/issues/2019-12-11/not_working_with_group_by-draggableviews-2867348-36.patch"
+                    "draggableviews_group_by": "https://www.drupal.org/files/issues/2019-12-11/not_working_with_group_by-draggableviews-2867348-36.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5261,16 +5264,16 @@
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747"
+                "reference": "42fda6d7380e5c940d7f68341ccae89d5ab9963b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/37b0976c78b94856543260ce09b460a7bc852747",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/42fda6d7380e5c940d7f68341ccae89d5ab9963b",
+                "reference": "42fda6d7380e5c940d7f68341ccae89d5ab9963b",
                 "shasum": ""
             },
             "require": {
@@ -5279,7 +5282,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -5326,7 +5329,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-08T17:28:34+00:00"
         },
         {
             "name": "symfony/polyfill-util",
