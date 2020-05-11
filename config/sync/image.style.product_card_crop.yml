@@ -1,0 +1,25 @@
+uuid: f152a5b3-1ce1-46ec-b6dc-961085b1866c
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.product_card_crop
+  module:
+    - crop
+name: product_card_crop
+label: 'Product Card Crop (540x405)'
+effects:
+  7e228d16-cf8b-4bd0-b8d6-ec95b2e1d73b:
+    uuid: 7e228d16-cf8b-4bd0-b8d6-ec95b2e1d73b
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: product_card_crop
+  e525b0ba-5c18-40f3-aa6a-d811995d548a:
+    uuid: e525b0ba-5c18-40f3-aa6a-d811995d548a
+    id: image_scale
+    weight: 2
+    data:
+      width: 540
+      height: null
+      upscale: true

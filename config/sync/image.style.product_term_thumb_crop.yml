@@ -1,0 +1,25 @@
+uuid: 417192d7-9c87-4d5d-bb9c-724d5efa8d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.product_term_thumb_crop
+  module:
+    - crop
+name: product_term_thumb_crop
+label: 'Product Term Thumb Crop (768x360)'
+effects:
+  c4538bb0-4480-40e4-a0b3-918fcafdceed:
+    uuid: c4538bb0-4480-40e4-a0b3-918fcafdceed
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: product_term_thumb_crop
+  30e91f38-ff73-4a35-97e0-00c9d10c7687:
+    uuid: 30e91f38-ff73-4a35-97e0-00c9d10c7687
+    id: image_scale
+    weight: 2
+    data:
+      width: 768
+      height: null
+      upscale: true

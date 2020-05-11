@@ -75,3 +75,16 @@
 .container.block--tabs {
   padding: 0;
 }
+
+.node--type-product .field-slideshow {
+  width: 540px;
+}
+
+.node--type-product .field-slideshow .field-slideshow-slide {
+  margin-top: -1px;
+}
+
+.page--product .node--type-product .group-left #field-slideshow-1-wrapper #field-slideshow-1-pager.list-inline li {
+  width: 23.5%;
+  height: 86px;
+}

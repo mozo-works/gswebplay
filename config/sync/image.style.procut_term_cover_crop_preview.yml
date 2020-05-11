@@ -1,0 +1,15 @@
+uuid: 94b4112b-11cc-4350-9fa7-17bd22d8151b
+langcode: en
+status: true
+dependencies: {  }
+name: procut_term_cover_crop_preview
+label: 'Procut Term Cover Crop Preview (2000x1125)'
+effects:
+  d85c0fbc-8c5a-4da8-9f91-6d554eb9c0df:
+    uuid: d85c0fbc-8c5a-4da8-9f91-6d554eb9c0df
+    id: image_scale
+    weight: 1
+    data:
+      width: 2000
+      height: 1125
+      upscale: true

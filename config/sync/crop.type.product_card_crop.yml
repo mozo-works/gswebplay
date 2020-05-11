@@ -1,0 +1,12 @@
+uuid: 50bf2cd7-e550-4266-956c-25c0f8260115
+langcode: en
+status: true
+dependencies: {  }
+id: product_card_crop
+label: 'Product Card Crop (540x405)'
+description: '제품 상세 카드 이미지 (540x405)'
+aspect_ratio: '540:405'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 540
+hard_limit_height: 405

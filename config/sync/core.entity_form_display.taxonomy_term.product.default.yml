@@ -9,7 +9,7 @@ dependencies:
     - image.style.thumbnail
     - taxonomy.vocabulary.product
   module:
-    - image
+    - image_widget_crop
     - path
 id: taxonomy_term.product.default
 targetEntityType: taxonomy_term
@@ -19,10 +19,18 @@ content:
   field_cover_image:
     weight: 0
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: procut_term_cover_crop_preview
+      crop_list:
+        - product_term_cover_2_crop
+      crop_types_required:
+        - product_term_cover_2_crop
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_description:
     weight: 3
@@ -35,10 +43,18 @@ content:
   field_thumb_image:
     weight: 1
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: product_term_thumb_crop
+      crop_list:
+        - product_term_thumb_crop
+      crop_types_required:
+        - product_term_thumb_crop
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   langcode:
     type: language_select
@@ -70,8 +86,8 @@ content:
     third_party_settings: {  }
   translation:
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   description: true

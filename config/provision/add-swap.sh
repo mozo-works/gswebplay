@@ -1,13 +1,10 @@
 #!/bin/sh
 
 # size of swapfile in megabytes
-swapsize=1024
+swapsize=2024
 
 # does the swap file already exist?
-grep -q "swapfile" /etc/fstab
-
-sudo sysctl -w vm.swappiness=10
-sudo sysctl -w vm.vfs_cache_pressure=200
+grep "swapfile" /etc/fstab
 
 # if not then create it
 if [ $? -ne 0 ]; then
@@ -25,3 +22,6 @@ fi
 free -m
 cat /proc/swaps
 cat /proc/meminfo | grep Swap
+
+sysctl -w vm.swappiness=10
+sysctl -w vm.vfs_cache_pressure=200

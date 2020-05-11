@@ -57,7 +57,7 @@ display:
         entity_label:
           label: 엔터티
         type:
-          label: '엔터티 형식'
+          label: '엔터티 유형'
         count:
           label: '사용 횟수'
       arguments:

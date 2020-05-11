@@ -20,7 +20,7 @@ dependencies:
     - node.type.product
   module:
     - file
-    - image
+    - image_widget_crop
     - path
     - text
 id: node.product.default
@@ -83,10 +83,18 @@ content:
   field_cover:
     weight: 1
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: procut_cover_crop_preview
+      crop_list:
+        - product_card_crop
+      crop_types_required:
+        - product_card_crop
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_fall_height:
     weight: 11
@@ -99,10 +107,18 @@ content:
   field_image:
     weight: 2
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: procut_cover_crop_preview
+      crop_list:
+        - product_card_crop
+      crop_types_required:
+        - product_card_crop
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_install:
     weight: 13
@@ -179,9 +195,9 @@ content:
     region: content
   translation:
     weight: 16
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 15

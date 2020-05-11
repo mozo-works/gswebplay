@@ -1,0 +1,15 @@
+uuid: 501aacd1-e715-4b81-a522-a00301aaffb3
+langcode: en
+status: true
+dependencies: {  }
+name: procut_cover_crop_preview
+label: 'Procut Cover Crop Preview (960x720)'
+effects:
+  dd104489-0177-40b5-8601-799976549969:
+    uuid: dd104489-0177-40b5-8601-799976549969
+    id: image_scale
+    weight: 1
+    data:
+      width: 960
+      height: null
+      upscale: true

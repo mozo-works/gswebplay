@@ -4,6 +4,8 @@
  * Theme and preprocess functions for views
  */
 
+use Drupal\image\Entity\ImageStyle;
+
 /**
  * Implements template_preprocess_views_view_grouping.
  *
@@ -17,7 +19,13 @@ function red_preprocess_views_view_grouping__products__page_1(&$vars) {
   foreach ($parent_values as $key => $value) {
     switch ($key) {
       case 0:
-        $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
+        $style = ImageStyle::load('product_term_cover_1_crop');
+        if($style) {
+          $url = $style->buildUrl(trim($value));
+          $vars['cover_image_url'] = str_replace('http://', '//', $url);
+        } else {
+          $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
+        }
         break;
       case 1:
         $parent = $value;
@@ -56,7 +64,13 @@ function red_preprocess_views_view_fields__products__page_1(&$vars) {
   foreach ($term_values as $key => $value) {
     switch ($key) {
       case 0:
-        $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
+        $style = ImageStyle::load('product_term_cover_1_crop');
+        if($style) {
+          $url = $style->buildUrl(trim($value));
+          $vars['cover_image_url'] = str_replace('http://', '//', $url);
+        } else {
+          $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
+        }
         break;
       case 1:
         $vars['cover_title'] = $parent = $value;
@@ -89,7 +103,13 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
   foreach ($parent_values as $key => $value) {
     switch ($key) {
       case 0:
-        $vars['cover_image_url'] = file_create_url(trim($value));
+        $style = ImageStyle::load('product_term_cover_2_crop');
+        if($style) {
+          $url = $style->buildUrl(trim($value));
+          $vars['cover_image_url'] = str_replace('http://', '//', $url);
+        } else {
+          $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
+        }
         break;
       case 1:
         $vars['cover_title'] = $parent = $value;

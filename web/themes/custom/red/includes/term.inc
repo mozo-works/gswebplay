@@ -4,6 +4,8 @@
  * Theme and preprocess functions for taxonomy terms
  */
 
+ use Drupal\image\Entity\ImageStyle;
+
 /**
  * Implements hook_theme_suggestions_taxonomy_term_alter().
  */
@@ -50,7 +52,14 @@ function red_preprocess_taxonomy_term(&$vars) {
     $fid = $field_cover_image_values['target_id'] ?? '';
     if ($fid) {
       $file = \Drupal::entityTypeManager()->getStorage('file')->load($fid);
-      $vars['cover_image_url'] = file_create_url($file->getFileUri());
+      $style = ImageStyle::load('product_term_cover_2_crop');
+      if($style) {
+        $url = $style->buildUrl($file->getFileUri());
+        $vars['cover_image_url'] =  str_replace('http://', '//', $url);
+      } else {
+        $vars['cover_image_url'] = file_create_url($file->getFileUri());
+      }
+
     }
     $vars['cover_description'] = $vars['content']['field_description'][0]['#context']['value'] ?? '';
   }

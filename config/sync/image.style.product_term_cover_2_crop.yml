@@ -1,0 +1,25 @@
+uuid: 75b6fd6b-abd6-4645-a3bf-9d66f30db3f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.product_term_cover_2_crop
+  module:
+    - crop
+name: product_term_cover_2_crop
+label: 'Product Term Cover 2 Crop (1920x400)'
+effects:
+  e5d4578d-d146-4280-b02f-064bde77dba6:
+    uuid: e5d4578d-d146-4280-b02f-064bde77dba6
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: product_term_cover_2_crop
+  b042b1fd-3849-4f4a-a009-5da48a91949e:
+    uuid: b042b1fd-3849-4f4a-a009-5da48a91949e
+    id: image_scale
+    weight: 2
+    data:
+      width: 1920
+      height: null
+      upscale: true
