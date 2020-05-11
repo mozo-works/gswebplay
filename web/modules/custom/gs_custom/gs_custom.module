@@ -5,8 +5,9 @@
  * Contains gs_custom.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
@@ -45,23 +46,36 @@ function gs_custom_menu_local_tasks_alter(&$data, $route_name) {
   // ksm($route_name);
   switch ($route_name) {
     case 'entity.taxonomy_term.canonical':
+      $sort_url = '';
       $current_tid = \Drupal::RouteMatch()->getParameter('taxonomy_term')->id();
-      $data['tabs'][0]['view.taxonomy_term.page_3'] = [
-        '#theme' => 'menu_local_task',
-        '#link' => [
-          'title' => t('Sort'),
-          'url' => Url::fromRoute('view.taxonomy_term.page_3', ['arg_0' => $current_tid]),
-          'localized_options' => [
-            'attributes' => ['title' => t('Sort')]
-          ],
-        ]
-      ];
+      $route_provider = \Drupal::service('router.route_provider');
+      $exists = count($route_provider->getRoutesByNames(['view.taxonomy_term.page_2'])) === 1;
+      if($exists) {
+        $sort_url = Url::fromRoute('view.taxonomy_term.page_2', ['arg_0' => $current_tid]);
+        $data['tabs'][0]['view.taxonomy_term.page_2'] = [
+          '#theme' => 'menu_local_task',
+          '#link' => [
+            'title' => t('Sort'),
+            'url' => $sort_url,
+            'localized_options' => [
+              'attributes' => ['title' => t('Sort')]
+            ],
+          ]
+        ];
+      }
     break;
   }
 }
 
 function gs_custom_preprocess_block(&$vars) {
   if($vars['plugin_id'] == 'local_tasks_block') {
-    $vars['attributes']['class'] += ['local-tasks', 'mt-3', 'container'];
+    $vars['attributes']['class'] = array_merge($vars['attributes']['class'], ['local-tasks', 'mt-3', 'container']);
+  }
+}
+
+// draggableviews attachemnet 정렬 폼의 action을 바로잡습니다.
+function gs_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (strpos($form_id, 'views_form_taxonomy_term_attachment') === 0) {
+    $form['#action'] .= '/sort';
   }
 }
