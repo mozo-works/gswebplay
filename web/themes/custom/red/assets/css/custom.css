@@ -96,3 +96,12 @@
 .view--products--page-1 #standard .group:nth-of-type(2) {
   display: none;
 }
+
+.view--products.view-display-id-page_1 .grouping .contents-rows .sub-netscape-treetop-adventure .card .card-box h3.title,
+.view--products.view-display-id-page_1 .grouping .contents-rows .sub-giant-double-dome-play-spider-net-tower .card .card-box h3.title {
+  transform: translate(-50%,-70%);
+}
+
+.view--products.view-display-id-page_1 .grouping#전체제품 .card:hover .card-overlay {
+  background: #c5241f !important;
+}
