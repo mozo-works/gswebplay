@@ -1,0 +1,18 @@
+uuid: 12a90128-8cb1-4427-bfe8-a6c278515008
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.address
+id: paragraph.address.created
+field_name: created
+entity_type: paragraph
+bundle: address
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
