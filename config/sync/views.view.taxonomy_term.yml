@@ -1506,9 +1506,8 @@ display:
           1: AND
       block_description: 'Other products'
       pager:
-        type: some
+        type: none
         options:
-          items_per_page: 3
           offset: 0
     cache_metadata:
       max-age: -1
