@@ -6,7 +6,7 @@ id: product_term_thumb_crop
 label: 'Product Term Thumb Crop (768x360)'
 description: '제품 분류 목록 썸네일 이미지 (768x360)'
 aspect_ratio: '768:360'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 768
-hard_limit_height: 360
+soft_limit_width: 768
+soft_limit_height: 360
+hard_limit_width: null
+hard_limit_height: null

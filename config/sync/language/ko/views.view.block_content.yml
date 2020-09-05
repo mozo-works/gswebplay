@@ -1,3 +1,4 @@
+label: '사용자 정의 블록 라이브러리'
 display:
   default:
     display_title: 마스터
@@ -11,12 +12,18 @@ display:
           sort_desc_label: 설명
       pager:
         options:
+          tags:
+            previous: '‹ 이전'
+            next: '다음 ›'
           expose:
             items_per_page_label: '페이지 당 항목 수'
             items_per_page_options_all_label: '- 모두 -'
+            offset_label: 건너뛰기
       fields:
         info:
           label: '블록 설명'
+        type:
+          label: '블록 유형'
         changed:
           label: 갱신됨
         operations:
@@ -25,5 +32,12 @@ display:
         info:
           expose:
             label: '블록 설명'
+        type:
+          expose:
+            label: '블록 유형'
+      title: '사용자 정의 블록 라이브러리'
   page_1:
-    display_title: 페이지
+    display_title: 쪽
+    display_options:
+      menu:
+        title: '사용자 정의 블록 라이브러리'

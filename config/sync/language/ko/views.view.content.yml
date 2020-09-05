@@ -8,6 +8,9 @@ display:
               1:
                 value: '1'
                 title: 공개
+              2:
+                title: 비공개
+            label: '공개 상태'
           expose:
             label: 상태
         title:
@@ -15,7 +18,7 @@ display:
             label: 제목
         type:
           expose:
-            label: '콘텐츠 타입'
+            label: '콘텐츠 형식'
         langcode:
           expose:
             label: 언어
@@ -26,17 +29,24 @@ display:
           exposed_sorts_label: 정렬기준
           sort_asc_label: Asc
           sort_desc_label: 설명
+      pager:
+        options:
+          tags:
+            previous: '‹ 이전'
+            next: '다음 ›'
+            first: '« 처음'
       fields:
         title:
           label: 제목
         type:
-          label: '콘텐츠 타입'
+          label: '콘텐츠 형식'
         name:
-          label: 글쓴이
+          label: 작성자
         status:
           label: 상태
           settings:
             format_custom_true: 공개
+            format_custom_false: 비공개
         changed:
           label: 갱신됨
         operations:
@@ -52,6 +62,6 @@ display:
         title: 콘텐츠
       tab_options:
         title: 콘텐츠
-    display_title: 페이지
+    display_title: 쪽
 label: 콘텐츠
 description: '콘텐츠 검색 및 관리'

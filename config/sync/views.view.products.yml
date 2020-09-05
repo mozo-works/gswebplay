@@ -33,8 +33,8 @@ display:
       query:
         type: views_query
         options:
-          disable_sql_rewrite: false
-          distinct: false
+          disable_sql_rewrite: true
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -409,7 +409,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -646,10 +646,10 @@ display:
           entity_type: taxonomy_term
           entity_field: status
           plugin_id: boolean
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
       tags:

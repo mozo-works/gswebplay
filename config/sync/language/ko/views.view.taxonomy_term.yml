@@ -15,6 +15,7 @@ display:
           expose:
             items_per_page_label: '페이지 당 항목 수'
             items_per_page_options_all_label: '- 모두 -'
+            offset_label: 건너뛰기
           tags:
             previous: ‹‹
             next: ››
@@ -25,4 +26,4 @@ display:
   feed_1:
     display_title: 피드
   page_1:
-    display_title: 페이지
+    display_title: 쪽

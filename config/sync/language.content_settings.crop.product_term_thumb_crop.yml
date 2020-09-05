@@ -1,0 +1,11 @@
+uuid: bc2faff6-e459-456a-b12d-fd1904726dea
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.product_term_thumb_crop
+id: crop.product_term_thumb_crop
+target_entity_type_id: crop
+target_bundle: product_term_thumb_crop
+default_langcode: site_default
+language_alterable: false

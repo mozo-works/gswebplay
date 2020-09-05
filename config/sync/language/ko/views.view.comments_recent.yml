@@ -11,3 +11,4 @@ display:
     display_title: 블록
     display_options:
       block_description: '최근 댓글 목록'
+      block_category: 목록(보기)

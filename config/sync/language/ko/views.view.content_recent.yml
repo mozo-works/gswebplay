@@ -14,6 +14,6 @@ display:
       empty:
         area_text_custom:
           content: '콘텐츠가 없습니다.'
-      use_more_text: '나머지 보기'
+      use_more_text: '더 보기'
   block_1:
     display_title: 블록

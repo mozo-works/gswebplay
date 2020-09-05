@@ -1,0 +1,11 @@
+uuid: fa8000c9-c1ab-48de-bfa1-4b95938ce46b
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.product_term_cover_2_crop
+id: crop.product_term_cover_2_crop
+target_entity_type_id: crop
+target_bundle: product_term_cover_2_crop
+default_langcode: site_default
+language_alterable: false

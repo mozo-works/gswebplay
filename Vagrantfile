@@ -3,8 +3,9 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "gbailey/amzn2"
-  config.vm.network "forwarded_port", guest: 8888, host: 8888
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 8888, host: 8888, id: "drush"
+  config.vm.network "forwarded_port", guest: 80, host: 8080, id: "apache2"
+  config.vm.network "forwarded_port", guest: 3000, host: 3000, id: "react"
   config.vm.network "private_network", ip: "192.168.36.12"
   config.vm.synced_folder ".", "/vagrant", type: 'nfs'
 
@@ -32,8 +33,6 @@ Vagrant.configure("2") do |config|
       USE gswebplay; SOURCE /vagrant/dump/dev.sql;
       GRANT ALL PRIVILEGES ON `gswebplay`.* to vagrant@'localhost' IDENTIFIED BY 'vagrant'; FLUSH PRIVILEGES;"
 
-    # amazon-linux-extras disable docker lamp-mariadb10.2-php7.2
-    # amazon-linux-extras enable php7.4
     amazon-linux-extras disable docker
     yum -y install php-cli php-mysqlnd php-fpm php-gd php-opcache php-xml php-zip php-mbstring
 
@@ -46,8 +45,7 @@ Vagrant.configure("2") do |config|
     cp /vagrant/config/provision/.bash_profile ~/ && source .bash_profile
 
     # install composer
-    curl -s https://getcomposer.org/installer | php
-    chmod +x composer.phar && sudo mv composer.phar /usr/local/bin/composer
+    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
     echo 'export PATH=/home/vagrant/.config/composer/vendor/bin/:$PATH' >> ~/.bash_profile && source ~/.bash_profile
     composer global require hirak/prestissimo
 
@@ -58,12 +56,10 @@ Vagrant.configure("2") do |config|
     # install nodejs
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
     . ~/.nvm/nvm.sh && nvm install --lts
+    npm -g i yarn
 
     cd /vagrant && composer install
     cp -r /vagrant/config/provision/*.php /vagrant/web/sites/default/
   SHELL
-
-  # https://www.vagrantup.com/docs/vagrantfile/vagrant_settings.html#config-vagrant-plugins
-  # config.vagrant.plugins = "vagrant-notify-forwarder"
 
 end

@@ -3,6 +3,7 @@ display:
   default:
     display_title: 마스터
     display_options:
+      title: '월별 보존'
       exposed_form:
         options:
           submit_button: 적용
@@ -15,10 +16,11 @@ display:
           expose:
             items_per_page_label: '페이지 당 항목 수'
             items_per_page_options_all_label: '- 모두 -'
+            offset_label: 건너뛰기
           tags:
             previous: ‹‹
             next: ››
   block_1:
     display_title: 블록
   page_1:
-    display_title: 페이지
+    display_title: 쪽

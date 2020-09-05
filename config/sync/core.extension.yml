@@ -35,7 +35,6 @@ module:
   history: 0
   image: 0
   image_widget_crop: 0
-  kint: 0
   language: 0
   layout_discovery: 0
   link: 0
