@@ -6,7 +6,7 @@ id: product_card_crop
 label: 'Product Card Crop (540x405)'
 description: '제품 상세 카드 이미지 (540x405)'
 aspect_ratio: '540:405'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 540
-hard_limit_height: 405
+soft_limit_width: 540
+soft_limit_height: 405
+hard_limit_width: null
+hard_limit_height: null

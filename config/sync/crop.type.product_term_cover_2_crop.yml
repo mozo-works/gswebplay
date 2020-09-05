@@ -6,7 +6,7 @@ id: product_term_cover_2_crop
 label: 'Product Term Cover Crop (1920x400)'
 description: '제품 분류 와이드 커버 레벨 2 (1920x400)'
 aspect_ratio: '1920:400'
-soft_limit_width: null
-soft_limit_height: null
-hard_limit_width: 1920
-hard_limit_height: 400
+soft_limit_width: 1920
+soft_limit_height: 400
+hard_limit_width: null
+hard_limit_height: null
