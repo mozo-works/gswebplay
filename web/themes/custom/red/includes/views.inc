@@ -46,9 +46,10 @@ function red_preprocess_views_view_grouping__products__page_1(&$vars) {
     $parent_term_id = str_replace('/taxonomy/term/', '', $nodes->item(0)->getAttribute('href'));
   }
   // /products 화면에서 customized 그룹을 표시합니다.
-  if ( (int) $parent_term_id > 0 &&  (int) $parent_term_id != 3) {
+  if ( (int) $parent_term_id > 0 && (int) $parent_term_id != 3) {
     $vars['hide'] = " hide";
   }
+  if($parent_term_id == '/ko4') $vars['hide'] = " hide";
 }
 
 /**
@@ -73,19 +74,17 @@ function red_preprocess_views_view_fields__products__page_1(&$vars) {
         }
         break;
       case 1:
-        $vars['cover_title'] = $parent = $value;
+        $vars['cover_title'] = $value;
         break;
     }
   }
-  $vars['item_class'] = ' sub-' . trim(str_replace(' ', '-', str_replace(' &amp; ', '-', strtolower(strip_tags($vars['cover_title'])))));
-  $vars['parent_url'] = '';
-
-  $dom = new DOMDocument;
-  $dom->loadHTML($parent);
-  $nodes = $dom->getElementsByTagName('a');
-  if (!empty($nodes->item(0))) {
-    $vars['parent_url'] = $nodes->item(0)->getAttribute('href');
-  }
+  $sub_term_class = trim(str_replace(' ', '-', str_replace(' &amp; ', '-', strtolower(strip_tags($vars['cover_title'])))));
+  $vars['item_class'] = ' sub-term sub-' . $sub_term_class;
+  
+  // standard 서브 분류 중복 제거
+  $parent = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($vars['row']->tid);
+  $parent = reset($parent);
+  if($parent->ID() == 1 && $vars['row']->index % 2 == 0 ) $vars['item_class'] = ' hide';
 
 }
 

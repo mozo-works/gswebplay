@@ -88,3 +88,11 @@
   width: 23.5%;
   height: 86px;
 }
+
+#roof-top .nav > li:first-of-type {
+  display: inline-block;
+}
+
+.view--products--page-1 #standard .group:nth-of-type(2) {
+  display: none;
+}
