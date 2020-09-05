@@ -14,9 +14,9 @@
       <li><a href="https://www.instagram.com/gswebplay/" target="_blank"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a></li>
       <li><a href="https://www.facebook.com/play.gsweb.9" target="_blank"><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></a></li>
       <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-      <li><span class="navbar-btn"><a href="/contact-us" class="btn btn-default">Contact</a></span></li>
+      <li><span class="navbar-btn"><a href="{% if lang == 'ko' %}/ko{% endif %}/contact-us" class="btn btn-default">Contact</a></span></li>
       <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-      <li><span class="navbar-btn"><a href="/finder" class="btn btn-default">Finder</a></span></li>
+      <li><span class="navbar-btn"><a href="{% if lang == 'ko' %}/ko{% endif %}/finder" class="btn btn-default">Finder</a></span></li>
     </ul>
   </div>
 </nav>
@@ -60,6 +60,7 @@
 <div id="navbar-secondary" class="clearfix">
   <div class="container">
     <div class="container">
+      {% if lang == 'en' %}
       <nav class="block block--menu block--mainnavigationleft" role="navigation" aria-labelledby="block-mainnavigationleft-menu">
         <ul class="nav navbar-nav" data-parent="menu_link_content:e4dcfa2b-08d5-45ad-8a3a-4185894f3153" style="display: block;">
           <li>
@@ -91,6 +92,39 @@
           </li>
         </ul>
       </nav>
+      {% else %}
+      <nav class="block block--menu block--mainnavigationleft" role="navigation" aria-labelledby="block-mainnavigationleft-menu">
+        <ul class="nav navbar-nav" data-parent="menu_link_content:e4dcfa2b-08d5-45ad-8a3a-4185894f3153" style="display: block;">
+          <li>
+            <a href="/ko/about">지에스웹소개</a>
+          </li>
+          <li>
+            <a href="/ko/news">공지사항</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav" data-parent="menu_link_content:bff1b6f9-6fbf-4740-aa8c-eb53d9c8a0ad" style="display: none;">
+          <li>
+            <a href="/ko/products#standard">전체제품</a>
+          </li>
+          <li>
+            <a href="/ko/products#new-products">신제품</a>
+          </li>
+          <li>
+            <a href="/ko/products/customized">맞춤형제품</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="block block--menu block--mainnavigationright-2" role="navigation" aria-labelledby="block-mainnavigationright-2-menu">
+        <ul class="nav navbar-nav navbar-right" data-parent="menu_link_content:b29ca056-4b15-439b-9d0c-acd3ec8f8188" style="display: none;">
+          <li>
+            <a href="/ko/tech">색상</a>
+          </li>
+          <li>
+            <a href="/ko/tech/warranty">품질보증서</a>
+          </li>
+        </ul>
+      </nav>
+      {% endif %}
     </div>
   </div>
 </div>

@@ -29,6 +29,7 @@ function red_theme_suggestions_page_alter(array &$suggestions, array $vars) {
 function red_preprocess_page(&$vars) {
   // 현재 언어 링크 숨기기
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $vars['lang'] = $language;
   $vars['active_' . $language] = ' class="hide"';
 
   // 콘텐츠 영역 전체 너비 여부
