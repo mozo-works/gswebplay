@@ -69,7 +69,11 @@ function gs_custom_menu_local_tasks_alter(&$data, $route_name) {
 
 function gs_custom_preprocess_block(&$vars) {
   if($vars['plugin_id'] == 'local_tasks_block') {
-    $vars['attributes']['class'] = array_merge($vars['attributes']['class'], ['local-tasks', 'mt-3', 'container']);
+    if ($vars['is_admin']) {
+      $vars['attributes']['class'] = array_merge($vars['attributes']['class'], ['local-tasks', 'mt-3', 'container']);
+    } else {
+      unset($vars['content']);
+    }
   }
 }
 
