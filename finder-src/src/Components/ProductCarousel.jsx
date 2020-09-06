@@ -4,7 +4,8 @@ import { Nav, NavItem } from '@bootstrap-styled/v4'
 
 export default function ProductCarousel(props) {
   let { images, title } = props
-  let firstImage = images[0].url.replace('/product-images/', '/styles/product_card/public/product-images/')
+  images = images.split('||')
+  let firstImage = images[0]
   const $ = document.querySelector.bind(document)
 
   function handleClick(e) {
@@ -21,11 +22,11 @@ export default function ProductCarousel(props) {
       </ProductImage>
       <ProductImageNavbar id="productImageNavbar" className="flex-wrap">
         { images.map((image, index) => {
-          let productCardUrl = image.url.replace('/product-images/', '/styles/product_card/public/product-images/')
+          image = 'http://localhost:8080' + image;
           return (
             <NavItem key={index} style={{ height: '94px', marginBottom: '5px' }}>
               <Covering onClick={handleClick} />
-              <img key={ index } src={ productCardUrl } alt={title} width="125" height="92" />
+              <img key={ index } src={ image } alt={title} width="125" height="92" />
             </NavItem>
           )
         }) }

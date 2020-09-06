@@ -2,7 +2,7 @@
   "name": "gswebplay-finder",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8888",
+  "proxy": "http://localhost",
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.2",
     "@bootstrap-styled/v4": "^3.3.0",

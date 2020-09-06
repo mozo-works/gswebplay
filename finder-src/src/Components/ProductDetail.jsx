@@ -31,7 +31,7 @@ export default class ProductDetail extends React.Component {
       .then(nodes => {
         let routePath = `${this.props.match.path}/${this.props.slug}/`
         if(nodes[0]) {
-          let productIdFirst = nodes[0].nid[0].value;
+          let productIdFirst = nodes[0].nid;
           this.setState({nodes: nodes, routePath: routePath, productIdFirst: productIdFirst, productId: this.state.productId })
         }
       })
@@ -51,18 +51,24 @@ export default class ProductDetail extends React.Component {
   }
 }
 
+function decodeHtml(html) {
+  var txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
+
 function ProductNode(nodeObjects) {
   let { productId } = useParams()
   let { nodes } = nodeObjects
   let i = 0
   if (productId) {
-    i = nodes.findIndex(node => node.nid[0].value === parseInt(productId))
+    i = nodes.findIndex(node => node.nid === productId)
   }
   let node = nodes[i]
   var cert;
-  if(node.field_cert[0]) {
+  if(node.field_cert) {
     cert = <div className="product__field-cert">
-      <a href={ node.field_cert[0].url } className="btn-download">
+      <a href={ node.field_cert } className="btn-download">
         Certificate &nbsp; <i className="fa fa-download" aria-hidden="true"></i>
       </a>
     </div>
@@ -70,47 +76,47 @@ function ProductNode(nodeObjects) {
   return (
     <Row className="pt-3">
       <Col lg={7}>
-        <ProductCarousel images={node.field_image} title={node.title[0].value} />
+        <ProductCarousel images={node.field_image} title={node.title} />
       </Col>
       <Col lg={5}>
         <div className="group-right">
           <div className="product__node-title">
-            <h2>{ node.title[0].value }</h2>
+            <h2>{ node.title }</h2>
           </div>
           { node.field_ages.length > 0 &&
           <div className="product__field-ages">
             <strong className="field__label">Ages</strong>
-            <div className="field__item">{ node.field_ages[0].value }</div>
+            <div className="field__item">{ node.field_ages }</div>
           </div>
           }
           { node.field_capacity.length > 0 &&
           <div className="product__field-capacity">
             <strong className="field__label">Capacity</strong>
-            <div className="field__item">{ node.field_capacity[0].value }</div>
+            <div className="field__item">{ node.field_capacity }</div>
           </div>
           }
           { node.field_size_meter.length > 0 &&
           <div className="product__field-size-meter">
             <strong className="field__label">Size (m)</strong>
-            <div className="field__item">{ node.field_size_meter[0].value }</div>
+            <div className="field__item">{ node.field_size_meter }</div>
           </div>
           }
           { node.field_size_inch.length > 0 &&
           <div className="product__field-size-inch">
             <strong className="field__label">Size ('-")</strong>
-            <div className="field__item">{ node.field_size_inch[0].value }</div>
+            <div className="field__item">{ decodeHtml(node.field_size_inch) }</div>
           </div>
           }
           { node.field_use_zone.length > 0 &&
           <div className="product__field-use-zone">
             <strong className="field__label">Use Zone (m)</strong>
-            <div className="field__item">{ node.field_use_zone[0].value }</div>
+            <div className="field__item">{ node.field_use_zone }</div>
           </div>
           }
           { node.field_fall_height.length > 0 &&
           <div className="product__field-fall-height">
             <strong className="field__label">Fall Height (m)</strong>
-            <div className="field__item">{ node.field_fall_height[0].value }</div>
+            <div className="field__item">{ node.field_fall_height }</div>
           </div>
           }
           { cert }
@@ -233,10 +239,11 @@ function ProductNavBar(props) {
       <div className="productNavBarContainer">
         <Nav id="productNavBar">
         {nodes.map((node, index) => {
-          let title = node.title[0].value
+          let title = node.title
           let slug = slugify(title, {remove: /[*+~.()'"!:@]/g}).toLowerCase()
-          let cover = node.field_cover[0].url
-          let productId = node.nid[0].value
+          let images = node.field_image.split('||')
+          let cover = 'http://localhost:8080' + images[0]
+          let productId = node.nid
           return (
             <NavItem key={index}>
               <NavLink to={`${routePath}${productId}`} activeClassName="active" className={ `nav-link product-item product-${slug}` }>
