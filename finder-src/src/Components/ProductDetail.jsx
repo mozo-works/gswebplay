@@ -242,7 +242,7 @@ function ProductNavBar(props) {
           let title = node.title
           let slug = slugify(title, {remove: /[*+~.()'"!:@]/g}).toLowerCase()
           let images = node.field_image.split('||')
-          let cover = 'http://localhost:8080' + images[0]
+          let cover = images[0]
           let productId = node.nid
           return (
             <NavItem key={index}>

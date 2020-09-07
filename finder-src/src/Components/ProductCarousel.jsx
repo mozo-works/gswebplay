@@ -22,7 +22,6 @@ export default function ProductCarousel(props) {
       </ProductImage>
       <ProductImageNavbar id="productImageNavbar" className="flex-wrap">
         { images.map((image, index) => {
-          image = 'http://localhost:8080' + image;
           return (
             <NavItem key={index} style={{ height: '94px', marginBottom: '5px' }}>
               <Covering onClick={handleClick} />
