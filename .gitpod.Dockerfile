@@ -8,4 +8,4 @@ FROM gitpod/workspace-mysql
 RUN wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
 RUN mkdir -p ~/.local/bin
 RUN chmod +x drush.phar && mv drush.phar ~/.local/bin/drush
-RUN git config user.email mozodev@users.noreply.github.com
+RUN git config --global user.email mozodev@users.noreply.github.com
