@@ -9,7 +9,8 @@ ports:
 tasks:
 - name: drush-rs
   before: |
-    mkdir -p ~/.local/bin
+    mkdir -p ~/.local/bin && export PATH="$HOME/.local/bin:$PATH"
+    echo 'export PATH="$HOME/.local/bin:$PATH"' > ~/.bashrc
     curl -sS https://getcomposer.org/installer | php -- --install-dir=~/.local/bin --filename=composer
     wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
     chmod +x drush.phar && mv drush.phar ~/.local/bin/drush
