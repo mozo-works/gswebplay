@@ -22,6 +22,7 @@ tasks:
   openMode: split-left
 
 - name: drush
+  command: export PATH="$HOME/.local/bin:$PATH"
   openMode: split-right
 
 github:
