@@ -105,3 +105,9 @@
 .view--products.view-display-id-page_1 .grouping#전체제품 .card:hover .card-overlay {
   background: #c5241f !important;
 }
+
+@media(max-width:767px){
+  .nav > li > a {
+    padding: 10px 5px;
+  }
+}
