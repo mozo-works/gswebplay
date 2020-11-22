@@ -17,10 +17,10 @@ tasks:
 - name: drush-rs
   before: composer update
   command: drush rs 0.0.0.0
-  open-mode: split-left
+  openMode: split-left
 
 - name: drush
-  open-mode: split-right
+  openMode: split-right
 
 github:
   prebuilds:
