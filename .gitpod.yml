@@ -10,6 +10,7 @@ tasks:
 - name: drush-rs
   before: |
     mkdir -p ~/.local/bin && export PATH="$HOME/.local/bin:$PATH"
+    git config --global user.email "$GH_EMAIL"
     echo 'export PATH="$HOME/.local/bin:$PATH"' > ~/.bashrc
     mysql -e "CREATE DATABASE IF NOT EXISTS gswebplay CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/home/gitpod/.local/bin --filename=composer
