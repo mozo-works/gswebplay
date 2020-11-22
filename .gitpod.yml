@@ -7,15 +7,15 @@ ports:
   onOpen: ignore
 
 tasks:
-- before: |
+- name: drush-rs
+  before: |
     wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
     mkdir -p ~/.local/bin
     chmod +x drush.phar && mv drush.phar ~/.local/bin/drush
     cd /workspace/gswebplay && composer install
-    exit;
-
-- name: drush-rs
-  before: composer update
+    chmod +w /workspace/gswebplay/web/sites/default/
+    cp -r /workspace/gswebplay/config/provision/*.php /workspace/gswebplay/web/sites/default/
+  init: composer update
   command: drush rs 0.0.0.0
   openMode: split-left
 
