@@ -659,10 +659,10 @@ display:
         options:
           items_per_page: 0
           offset: 0
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
@@ -1165,10 +1165,10 @@ display:
         options:
           items_per_page: 0
           offset: 0
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: 0
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
@@ -1509,10 +1509,10 @@ display:
         type: none
         options:
           offset: 0
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
@@ -1588,6 +1588,7 @@ display:
         type: none
         options:
           offset: 0
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -1825,9 +1826,9 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: draggable_views_field
+      rendering_language: '***LANGUAGE_language_interface***'
     cache_metadata:
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
