@@ -25,6 +25,3 @@ $ drush rs /
 ```
 drush sql-query "DELETE FROM key_value WHERE collection='system.schema' AND name='layout_plugin';"
 ```
-
-# https://github.com/gitpod-io/gitpod/issues/1800
-GIT_COMMITER_EMAIL
