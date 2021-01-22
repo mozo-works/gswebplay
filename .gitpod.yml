@@ -12,14 +12,13 @@ tasks:
     mkdir -p ~/.local/bin && export PATH="$HOME/.local/bin:$PATH"
     git config --global user.email "$GH_EMAIL"
     echo 'export PATH="$HOME/.local/bin:$PATH"' > ~/.bashrc
-    mysql -e "CREATE DATABASE IF NOT EXISTS gswebplay CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/home/gitpod/.local/bin --filename=composer
     wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
     chmod +x drush.phar && mv drush.phar ~/.local/bin/drush
     composer update
     chmod +w /workspace/gswebplay/web/sites/default/
     cp -r /workspace/gswebplay/config/provision/*.php /workspace/gswebplay/web/sites/default/
-  init: composer update
+  init: mysql -e "CREATE DATABASE IF NOT EXISTS gswebplay CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;" && composer update
   command: drush rs 0.0.0.0
   openMode: split-left
 
