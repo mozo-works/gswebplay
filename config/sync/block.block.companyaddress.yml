@@ -18,7 +18,7 @@ settings:
   provider: gs_custom
   label_display: '0'
   company_name: 'GSWeb Co., Ltd'
-  company_address: '65, Saengnim-daero 259beon-gil, Saengnim-myeon, Gimhae-si, Gyeongsangnam-do, 50802, Rep. of KOREA'
+  company_address: '65, Saengnim-daero 259 beon-gil, Saengnim-Myeon, Gimhae-si, Gyeongsangnam-Do, 50802, Republic of Korea.'
   company_phone: '+82 (0)55 326 9025'
   company_fax: '+82 (0)55 326 9026'
 visibility: {  }

@@ -1,20 +1,20 @@
-uuid: a192f07e-acf1-4f73-992a-28c701db4222
-langcode: en
+uuid: 28af2553-99fb-4d7c-b9b2-4a5fe0be3e03
+langcode: ko
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.product
   module:
-    - path
-id: taxonomy_term.product.path
-field_name: path
+    - text
+id: taxonomy_term.product.description
+field_name: description
 entity_type: taxonomy_term
 bundle: product
-label: 'URL alias'
+label: 설명
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: path
+field_type: text_long
