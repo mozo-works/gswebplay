@@ -33,3 +33,4 @@ deployment-config.json
 .vagrant
 /.editorconfig
 /.gitattributes
+.DS_Store

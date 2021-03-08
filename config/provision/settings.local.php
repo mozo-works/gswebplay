@@ -12,7 +12,7 @@ $settings['cache']['bins']['page'] = 'cache.backend.null';
 $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 $settings["config_sync_directory"] = '../config/sync';
-$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
+$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'kint'];
 
 $databases['default']['default'] = [
   'database' => 'gswebplay',
@@ -26,3 +26,10 @@ $databases['default']['default'] = [
 ];
 
 $conf['stage_file_proxy_origin'] = 'http://gswebplay.com';
+
+// Change kint maxLevels setting:
+include_once(DRUPAL_ROOT . '/modules/contrib/devel/kint/kint/Kint.class.php');
+if(class_exists('Kint')){
+  // Set the maxlevels to prevent out-of-memory. Currently there doesn't seem to be a cleaner way to set this:
+  Kint::$maxLevels = 4;
+}
