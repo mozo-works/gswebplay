@@ -12,44 +12,47 @@ use Drupal\image\Entity\ImageStyle;
  * @see templates/view/views-view-grouping--products-page-1.html.twig
  */
 function red_preprocess_views_view_grouping__products__page_1(&$vars) {
-  $raw_grouping_title = $vars['title']->__toString();
-  $parent_values = explode('|', strip_tags($raw_grouping_title, '<a>'));
-  $parent_values = array_filter($parent_values, function($val){ return str_replace(array("\r\n", "\r", "\n"), "", $val); });
+  if (!empty($vars['title'])) {
+    $raw_grouping_title = $vars['title'];
+    $parent_values = explode('|', strip_tags($raw_grouping_title, '<a>'));
+    $parent_values = array_filter($parent_values, function($val){ return str_replace(array("\r\n", "\r", "\n"), "", $val); });
 
-  foreach ($parent_values as $key => $value) {
-    switch ($key) {
-      case 0:
-        $style = ImageStyle::load('product_term_cover_1_crop');
-        if($style) {
-          $url = $style->buildUrl(trim($value));
-          $vars['cover_image_url'] = str_replace('http://', '//', $url);
-        } else {
-          $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
-        }
-        break;
-      case 1:
-        $parent = $value;
-        $vars['cover_title'] = strip_tags($value);
-        break;
-      case 2:
-        $vars['cover_description'] = $value;
-        break;
+    foreach ($parent_values as $key => $value) {
+      switch ($key) {
+        case 0:
+          $style = ImageStyle::load('product_term_cover_1_crop');
+          if($style) {
+            $url = $style->buildUrl(trim($value));
+            $vars['cover_image_url'] = str_replace('http://', '//', $url);
+          } else {
+            $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
+          }
+          break;
+        case 1:
+          $parent = $value;
+          $vars['cover_title'] = strip_tags($value);
+          break;
+        case 2:
+          $vars['cover_description'] = $value;
+          break;
+      }
     }
-  }
-  $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($vars['cover_title'])));
-  $vars['hide'] = '';
 
-  $dom = new DOMDocument;
-  $dom->loadHTML($parent);
-  $nodes = $dom->getElementsByTagName('a');
-  if (!empty($nodes->item(0))) {
-    $parent_term_id = str_replace('/taxonomy/term/', '', $nodes->item(0)->getAttribute('href'));
+    $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($vars['cover_title'])));
+    $vars['hide'] = '';
+
+    $dom = new DOMDocument;
+    $dom->loadHTML($parent);
+    $nodes = $dom->getElementsByTagName('a');
+    if (!empty($nodes->item(0))) {
+      $parent_term_id = str_replace('/taxonomy/term/', '', $nodes->item(0)->getAttribute('href'));
+    }
+    // /products 화면에서 customized 그룹을 표시합니다.
+    if ( (int) $parent_term_id > 0 && (int) $parent_term_id != 3) {
+      $vars['hide'] = " hide";
+    }
+    if($parent_term_id == '/ko4') $vars['hide'] = " hide";
   }
-  // /products 화면에서 customized 그룹을 표시합니다.
-  if ( (int) $parent_term_id > 0 && (int) $parent_term_id != 3) {
-    $vars['hide'] = " hide";
-  }
-  if($parent_term_id == '/ko4') $vars['hide'] = " hide";
 }
 
 /**
