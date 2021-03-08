@@ -76,8 +76,9 @@
         "malsup/jquery.cycle": "*"
     },
     "require-dev": {
-        "drupal/devel": "^2.1",
-        "drupal/stage_file_proxy": "^1.0"
+        "drupal/devel": "^4",
+        "drupal/stage_file_proxy": "^1.0",
+        "kint-php/kint": "^3.3"
     },
     "conflict": {
         "drupal/drupal": "*"

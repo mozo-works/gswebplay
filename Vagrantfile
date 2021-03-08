@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     echo "install php7.4"
     # yum -y remove php-cli php-mysqlnd php-fpm php-gd php-opcache php-xml php-zip php-mbstring
     amazon-linux-extras disable lamp-mariadb10.2-php7.2 docker
-    amazon-linux-extras enable php7.4
+    amazon-linux-extras enable php7.4 && yum clean metadata
     yum -y install php-cli php-mysqlnd php-fpm php-gd php-opcache php-xml php-zip php-mbstring
 
     cp /vagrant/config/provision/localhost.vhost.conf /etc/httpd/conf.d/
