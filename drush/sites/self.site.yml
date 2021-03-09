@@ -8,10 +8,10 @@ local:
     - files: sites/default/files
 
 prod:
-  host: ec2-13-125-135-1.ap-northeast-2.compute.amazonaws.com
-  user: ec2-user
-  root: /var/www/gswebplay/web
-  uri: https://gswebplay.com
+  host: ${env.PROD_HOST}
+  user: ${env.PROD_USER}
+  root: ${env.PROD_ROOT}
+  uri: ${env.PROD_URI}
   ssh:
     options: '-i ${env.PROD_PEM_KEY}'
   paths:
