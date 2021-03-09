@@ -6,7 +6,9 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-
+if [ -f /vagrant/.env ]; then
+	set -o allexport; source /vagrant/.env; set +o allexport
+fi
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH=/home/vagrant/.config/composer/vendor/bin/:$PATH

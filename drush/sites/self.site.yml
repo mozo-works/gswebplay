@@ -1,0 +1,18 @@
+# Edit or remove this file as needed.
+# Docs at https://github.com/drush-ops/drush/blob/master/examples/example.site.yml
+
+local:
+  uri: http://localhost:8080
+  root: /vagrant/web
+  paths:
+    - files: sites/default/files
+
+prod:
+  host: ec2-13-125-135-1.ap-northeast-2.compute.amazonaws.com
+  user: ec2-user
+  root: /var/www/gswebplay/web
+  uri: https://gswebplay.com
+  ssh:
+    options: '-i ${env.PROD_PEM_KEY}'
+  paths:
+    - files: sites/default/files

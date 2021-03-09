@@ -1,0 +1,43 @@
+#
+# A Drush configuration file
+#
+# Docs at https://github.com/drush-ops/drush/blob/master/examples/example.drush.yml
+#
+# Edit or remove this file as needed.
+
+options:
+  uri: 'http://localhost:8080'
+
+command:
+  sql:
+    dump:
+      options:
+        structure-tables-key: common
+        skip-tables-key: common
+        extra-dump:
+          --skip-triggers
+
+sql:
+  tables:
+    common:
+      - user
+      - permissions
+      - role_permissions
+      - role
+  structure-tables:
+    common:
+      - batch
+      - 'cache*'
+      - history
+      - 'search_*'
+      - 'sessions'
+      - 'watchdog'
+  skip-tables:
+    common:
+      - 'migration_*'
+      - 'migrate_*'
+      - 'field_deleted_*'
+
+ssh:
+  options: '-o PasswordAuthentication=no'
+  pipefail: 'set -o pipefail; '
