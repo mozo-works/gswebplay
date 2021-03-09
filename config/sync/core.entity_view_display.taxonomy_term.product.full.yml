@@ -7,6 +7,7 @@ dependencies:
     - field.field.taxonomy_term.product.field_cover_image
     - field.field.taxonomy_term.product.field_description
     - field.field.taxonomy_term.product.field_thumb_image
+    - image.style.product_term_thumb_crop
     - taxonomy.vocabulary.product
   module:
     - image
@@ -19,7 +20,7 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: product_term_thumb_crop
       image_link: ''
     third_party_settings: {  }
     type: image

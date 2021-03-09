@@ -68,7 +68,7 @@ function red_preprocess_views_view_fields__products__page_1(&$vars) {
   foreach ($term_values as $key => $value) {
     switch ($key) {
       case 0:
-        $style = ImageStyle::load('product_term_cover_1_crop');
+        $style = ImageStyle::load('product_term_thumb_crop');
         if($style) {
           $url = $style->buildUrl(trim($value));
           $vars['cover_image_url'] = str_replace('http://', '//', $url);

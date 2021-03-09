@@ -17,20 +17,11 @@ dependencies:
     - field.field.node.product.field_size_inch
     - field.field.node.product.field_size_meter
     - field.field.node.product.field_use_zone
-    - image.style.product_card
+    - image.style.product_card_crop
     - node.type.product
   module:
-    - ds
     - image
     - user
-third_party_settings:
-  ds:
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
 id: node.product.cover
 targetEntityType: node
 bundle: product
@@ -41,7 +32,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: product_card
+      image_style: product_card_crop
       image_link: content
     third_party_settings: {  }
     region: content
