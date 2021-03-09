@@ -20,7 +20,7 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      image_style: product_term_thumb_crop
+      image_style: product_term_cover_2_crop
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -32,7 +32,15 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_thumb_image:
+    type: image
+    weight: 1
+    region: content
+    label: visually_hidden
+    settings:
+      image_style: product_term_thumb_crop
+      image_link: ''
+    third_party_settings: {  }
 hidden:
   description: true
-  field_thumb_image: true
   langcode: true
