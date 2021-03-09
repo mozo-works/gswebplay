@@ -1275,7 +1275,19 @@ display:
           entity_field: nid
           plugin_id: node_nid
       header: {  }
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: draggableviews_structure
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
       style:
         type: default
         options:
