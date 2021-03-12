@@ -20,6 +20,9 @@ function red_preprocess_block(&$vars) {
       $region = $block->getRegion();
       $vars['content']['#attributes']['data-region'] = $region;
       break;
+    case 'views_block:customized-block_1':
+      $vars['#cache']['max-age'] = 0;
+      break;
   }
 
   // cover_block
