@@ -145,6 +145,15 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
       $vars['cover_description'] .= $button;
     }
   }
+  // 국문인 경우 프로젝트 제목을 시공사례로 치환합니다.
+  if ($current_uri == '/ko/projects') {
+    $vars['cover_title'] = '시공사례';
+    $user = \Drupal::currentUser()->getRoles();
+    if(in_array("administrator", $user)) {
+      $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; 추가하기</a>';
+      $vars['cover_description'] .= $button;
+    }
+  }
 }
 
 /**
