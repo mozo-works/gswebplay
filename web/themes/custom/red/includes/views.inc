@@ -41,6 +41,17 @@ function red_preprocess_views_view_grouping__products__page_1(&$vars) {
     $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($vars['cover_title'])));
     $vars['hide'] = '';
 
+    // 국문인 경우 제품 분류 slug 치환
+    $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $slugs = [
+      '전체제품' => 'standard',
+      '신제품' => 'new-products',
+      '맞춤형제품' => 'customized'
+    ];
+    if ($lang == 'ko' && in_array($vars['cover_title'], array_keys($slugs))) {
+      $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($slugs[$vars['cover_title']])));
+    }
+
     $dom = new DOMDocument;
     $dom->loadHTML($parent);
     $nodes = $dom->getElementsByTagName('a');
@@ -131,6 +142,15 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
     $user = \Drupal::currentUser()->getRoles();
     if(in_array("administrator", $user)) {
       $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; new project</a>';
+      $vars['cover_description'] .= $button;
+    }
+  }
+  // 국문인 경우 프로젝트 제목을 시공사례로 치환합니다.
+  if ($current_uri == '/ko/projects') {
+    $vars['cover_title'] = '시공사례';
+    $user = \Drupal::currentUser()->getRoles();
+    if(in_array("administrator", $user)) {
+      $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; 추가하기</a>';
       $vars['cover_description'] .= $button;
     }
   }
