@@ -13,3 +13,4 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH=/home/vagrant/.config/composer/vendor/bin/:$PATH
 alias composer="COMPOSER_MEMORY_LIMIT=-1 composer"
+chmod 400 ~/.ssh/gsweb18.pem

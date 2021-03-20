@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: ".ssh/"
+  config.vm.provision "file", source: "~/.ssh/gsweb18.pem", destination: ".ssh/"
   config.vm.provision "shell", inline: <<-SHELL
     # set timezone to Asia/Seoul
     rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
@@ -48,7 +49,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     # overwrite bash profile
-    cp /vagrant/config/provision/.bash_profile ~/ && source .bash_profile
+    cp /vagrant/config/provision/bash_profile ~/.bash_profile && source .bash_profile
 
     # install composer
     curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
