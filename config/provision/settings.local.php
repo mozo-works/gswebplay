@@ -1,6 +1,6 @@
 <?php
 
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/theme-dev.services.yml';
 $config['system.logging']['error_level'] = 'verbose';
 
 $config['system.performance']['css']['preprocess'] = FALSE;
