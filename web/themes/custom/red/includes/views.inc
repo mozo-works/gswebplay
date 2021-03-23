@@ -176,6 +176,16 @@ function red_preprocess_views_view_unformatted__taxonomy_term(&$vars) {
         $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
         $vars['title'] = $term->getName();
       }
+      break;
+    case 'attachment_1':
+      ksm($vars['title']->__toString());
+      ksm(reset($vars['rows']));
+      // ksm($view->result[0]->_entity->field_category->getValue());
+      // $tid = reset($view->args);
+      // $parent = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($tid);
+      // $parent = reset($parent);
+      // ksm($tid, $parent->ID());
+      // if($parent->ID() == 1 && $vars['row']->index % 2 == 0 ) $vars['item_class'] = ' hide';
   }
 }
 

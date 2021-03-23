@@ -25,6 +25,7 @@
   {%
     set row_classes = [
       default_row_class ? 'view__row',
+      'product--' ~ row.content['#row'].nid
     ]
   %}
     <div{{ row.attributes.addClass(row_classes) }}>
