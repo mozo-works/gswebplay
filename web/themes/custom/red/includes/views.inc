@@ -178,8 +178,8 @@ function red_preprocess_views_view_unformatted__taxonomy_term(&$vars) {
       }
       break;
     case 'attachment_1':
-      ksm($vars['title']->__toString());
-      ksm(reset($vars['rows']));
+      // ksm($vars['title']->__toString());
+      // ksm(reset($vars['rows']));
       // ksm($view->result[0]->_entity->field_category->getValue());
       // $tid = reset($view->args);
       // $parent = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($tid);
