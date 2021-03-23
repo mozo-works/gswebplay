@@ -12,7 +12,7 @@ $settings['cache']['bins']['page'] = 'cache.backend.null';
 $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 $settings["config_sync_directory"] = '../config/sync';
-$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'kint'];
+$settings['config_exclude_modules'] = ['devel'];
 
 $databases['default']['default'] = [
   'database' => 'gswebplay',
@@ -25,4 +25,8 @@ $databases['default']['default'] = [
   'collation' => 'utf8mb4_general_ci',
 ];
 
-$conf['stage_file_proxy_origin'] = 'http://gswebplay.com';
+// Change kint max_depth setting.
+if (class_exists('Kint')) {
+  // Set the max_depth to prevent out-of-memory.
+  \Kint::$max_depth = 4;
+}

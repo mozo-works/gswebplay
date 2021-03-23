@@ -96,9 +96,11 @@ function red_preprocess_views_view_fields__products__page_1(&$vars) {
   $vars['item_class'] = ' sub-term sub-' . $sub_term_class;
   
   // standard 서브 분류 중복 제거
-  // $parent = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($vars['row']->tid);
-  // $parent = reset($parent);
-  // if($parent->ID() == 1 && $vars['row']->index % 2 == 0 ) $vars['item_class'] = ' hide';
+  if($vars['view']->current_display !== 'page_1') {
+    $parent = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($vars['row']->tid);
+    $parent = reset($parent);
+    if($parent->ID() == 1 && $vars['row']->index % 2 == 0 ) $vars['item_class'] = ' hide';
+  }
 
 }
 
