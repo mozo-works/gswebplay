@@ -195,7 +195,7 @@
       singleMasts = [19, 20, 21, 22, 23, 179, 415, 182, 183, 184, 185, 180, 24, 25, 26, 27, 181, 28, 29, 30];
       doubleMasts = [31, 32, 33];
       quadMasts = [36, 37, 38];
-      targets = doubleMasts.concat(quadMasts);
+      targets = singleMasts.concat(doubleMasts, quadMasts);
       $.each(targets, function(i, item) {
         removeDuplicates('.draggable.product--' + item);
       });
