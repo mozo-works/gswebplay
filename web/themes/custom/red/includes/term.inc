@@ -4,7 +4,8 @@
  * Theme and preprocess functions for taxonomy terms
  */
 
- use Drupal\image\Entity\ImageStyle;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_theme_suggestions_taxonomy_term_alter().
@@ -13,7 +14,7 @@ function red_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars, $hook) 
   $request = \Drupal::routeMatch()->getRouteObject();
   $params = \Drupal::routeMatch()->getParameters();
   $suggestions[] = 'taxonomy_term__' . $vars['elements']['#view_mode'];
-
+  
   if ($params->has('taxonomy_term')) {
     $term = $params->get('taxonomy_term')->toArray();
     $id = $term['tid'][0]['value'];
@@ -21,6 +22,9 @@ function red_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars, $hook) 
 
     $suggestions[] = 'taxonomy_term__' . $id . '__' . $vars['elements']['#view_mode'];
     $suggestions[] = 'taxonomy_term__' . $vocabulary . '__' . $vars['elements']['#view_mode'];
+  }
+  if($params->get('view_id') == 'taxonomy_term' && $params->get('display_id') == 'page_2') {
+    $suggestions[] = 'taxonomy_term__product__full';
   }
 }
 
