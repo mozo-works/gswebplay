@@ -183,23 +183,20 @@
     netClimberSub = $('.view--taxonomy-term--page-1 .view-display-id-attachment_1');
     if (netClimberSub.length > 0) {
       doubleMasts = [31, 32, 33];
-      $.each(doubleMasts, function(i, item) {
-        removeDuplicates('.group-tid--18 .product--' + item);
-      });
       quadMasts = [36, 37, 38];
-      $.each(quadMasts, function(i, item) {
-        removeDuplicates('.group-tid--20 .product--' + item);
+      targets = doubleMasts.concat(quadMasts);
+      $.each(targets, function(i, item) {
+        removeDuplicates('.views__row .product--' + item);
       });
     }
     // netClimber 정렬 화면 -- /taxonomy/term/4/sort
     netClimberSort = $('.view--taxonomy-term--page-2 .view-display-id-attachment_2');
     if (netClimberSort.length > 0) {
+      singleMasts = [19, 20, 21, 22, 23, 179, 415, 182, 183, 184, 185, 180, 24, 25, 26, 27, 181, 28, 29, 30];
       doubleMasts = [31, 32, 33];
-      $.each(doubleMasts, function(i, item) {
-        removeDuplicates('.draggable.product--' + item);
-      });
       quadMasts = [36, 37, 38];
-      $.each(quadMasts, function(i, item) {
+      targets = doubleMasts.concat(quadMasts);
+      $.each(targets, function(i, item) {
         removeDuplicates('.draggable.product--' + item);
       });
     }
