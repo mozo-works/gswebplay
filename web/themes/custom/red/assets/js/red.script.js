@@ -178,7 +178,8 @@
   }
 
   $(function () {
-    // 중복 제거 /taxonomy/term/4
+    // 중복 제거
+    // netClimber 목록 화면 -- /taxonomy/term/4
     netClimberSub = $('.view--taxonomy-term--page-1 .view-display-id-attachment_1');
     if (netClimberSub.length > 0) {
       doubleMasts = [31, 32, 33];
@@ -188,6 +189,18 @@
       quadMasts = [36, 37, 38];
       $.each(quadMasts, function(i, item) {
         removeDuplicates('.group-tid--20 .product--' + item);
+      });
+    }
+    // netClimber 정렬 화면 -- /taxonomy/term/4/sort
+    netClimberSort = $('.view--taxonomy-term--page-2 .view-display-id-attachment_2');
+    if (netClimberSort.length > 0) {
+      doubleMasts = [31, 32, 33];
+      $.each(doubleMasts, function(i, item) {
+        removeDuplicates('.draggable.product--' + item);
+      });
+      quadMasts = [36, 37, 38];
+      $.each(quadMasts, function(i, item) {
+        removeDuplicates('.draggable.product--' + item);
       });
     }
   });
