@@ -42,7 +42,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content'
+          perm: 'access draggableviews'
       cache:
         type: tag
         options: {  }
