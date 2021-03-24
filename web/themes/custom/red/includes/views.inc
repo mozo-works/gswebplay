@@ -178,6 +178,11 @@ function red_preprocess_views_view_unformatted__taxonomy_term(&$vars) {
       }
       break;
     case 'attachment_1':
+      $first_row = reset($vars['rows']);
+      if(!empty($first_row)) {
+        $vars['group_tid'] = $first_row['content']['#row']->taxonomy_term_field_data_node_field_data_tid;
+      }
+
       // ksm($vars['title']->__toString());
       // ksm(reset($vars['rows']));
       // ksm($view->result[0]->_entity->field_category->getValue());
