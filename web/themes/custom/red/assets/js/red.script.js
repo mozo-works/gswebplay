@@ -170,7 +170,6 @@
   var removeDuplicates = function (selector) {
     var els = document.querySelectorAll(selector);
     var originalEl = els[0];
-    console.log(selector, els);
     for (var i = 0; i < els.length; i++) {
       if (els[i] !== originalEl) {
         els[i].parentNode.removeChild(els[i]);
