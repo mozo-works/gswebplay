@@ -1,0 +1,21 @@
+{
+    // Configuring Visual Studio Code
+    // https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code
+    "recommendations": [
+        "mrmlnc.vscode-duplicate",
+        "editorconfig.editorconfig",
+        "ikappas.composer",
+        "ikappas.phpcs",
+        "persoderlind.vscode-phpcbf",
+        "msjsdiag.debugger-for-chrome",
+        "neilbrayfield.php-docblocker",
+        "dmitrydorofeev.empty-indent",
+        "bmewburn.vscode-intelephense-client",
+        "marcostazi.vs-code-drupal",
+        "bbeversdorf.drupal-check",
+        "mblode.twig-language-2",
+        "dssiqueira.drupal-8-snippets",
+        "tsega.drupal-8-javascript-snippets",
+        "tsega.drupal-8-twig-snippets"
+    ]
+}

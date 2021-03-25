@@ -1,44 +1,96 @@
 {
-	"folders": [
-    {
-      "name": "custom-theme-red",
-      "path": "web/themes/custom/red"
-    },
-    {
-      "name": "finder-src",
-      "path": "finder-src"
-    },
-    {
-      "name": "custom-modules",
-      "path": "web/modules/custom/"
-    },
-    {
-      "name": "contrib-modules",
-      "path": "web/modules/contrib/"
-    },
-    {
-      "name": "drupal-core",
-      "path": "web/core/"
-    },
-    {
-      "name": "config",
-      "path": "config"
-    },
-    {
-      "name": "dump",
-      "path": "dump"
-    },
-		{
-      "name": "project-root",
-			"path": "."
-		}
-	],
-	"settings": {
-    "files.watcherExclude": {
-      "**/.git/objects/**": true,
-      "**/.git/subtree-cache/**": true,
-      "**/node_modules/*/**": true
-    },
-    "remote.autoForwardPorts": false
-  }
+    "folders": [
+        {
+            "name": "custom-theme-red",
+            "path": "web/themes/custom/red"
+        },
+        {
+            "name": "finder-src",
+            "path": "finder-src"
+        },
+        {
+            "name": "custom-modules",
+            "path": "web/modules/custom/"
+        },
+        {
+            "name": "contrib-modules",
+            "path": "web/modules/contrib/"
+        },
+        {
+            "name": "drupal-core",
+            "path": "web/core/"
+        },
+        {
+            "name": "config",
+            "path": "config"
+        },
+        {
+            "name": "dump",
+            "path": "dump"
+        },
+        {
+            "name": "project-root",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "breadcrumbs.enabled": true,
+        "css.validate": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "full",
+        "editor.insertSpaces": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": false,
+        "editor.renderWhitespace": "boundary",
+        "editor.wordWrapColumn": 80,
+        "editor.wordWrap": "off",
+        "editor.detectIndentation": true,
+        "editor.rulers": [
+            80
+        ],
+        "files.associations": {
+            "*.inc": "php",
+            "*.module": "php",
+            "*.install": "php",
+            "*.theme": "php",
+            "*.profile": "php",
+            "*.tpl.php": "php",
+            "*.test": "php",
+            "*.php": "php",
+            "*.info": "ini",
+            "*.html": "twig"
+        },
+        "emmet.includeLanguages": {
+            "twig": "html"
+        },
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "html.format.enable": true,
+        "html.format.wrapLineLength": 80,
+        "telemetry.enableTelemetry": false,
+        "emptyIndent.removeIndent": true,
+        "emptyIndent.highlightIndent": false,
+        "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
+        "phpcs.enable": true,
+        "phpcs.standard": "/vagrant/vendor/drupal/coder/coder_sniffer/Drupal",
+        "php.validate.enable": true,
+        "php.validate.executablePath": "/usr/bin/php",
+        "php.validate.run": "onType",
+        "php.suggest.basic": false,
+        "intelephense.environment.documentRoot": "/vagrant/web/core/index.php",
+        "intelephense.format.braces": "k&r",
+        "php-docblocker.gap": true,
+        "php-docblocker.useShortNames": true,
+        "composer.enabled": true,
+        "composer.executablePath": "/usr/local/bin/composer",
+        "remote.autoForwardPorts": false,
+        "remote.SSH.defaultForwardedPorts": [
+            {
+                "localPort": 8080,
+                "remotePort": 80,
+                "name": "apache2"
+            }
+        ]
+    }
 }

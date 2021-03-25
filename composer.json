@@ -76,8 +76,10 @@
         "malsup/jquery.cycle": "*"
     },
     "require-dev": {
+        "drupal/coder": "^8.3",
         "drupal/devel": "^4",
-        "kint-php/kint": "^3.3"
+        "kint-php/kint": "^3.3",
+        "squizlabs/php_codesniffer": "*"
     },
     "conflict": {
         "drupal/drupal": "*"
