@@ -4,7 +4,6 @@
  * Theme and preprocess functions for menus
  */
 
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  *

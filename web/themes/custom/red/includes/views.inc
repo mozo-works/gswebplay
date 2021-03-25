@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * Theme and preprocess functions for views
+ * Theme and preprocess functions for views.
  */
 
 use Drupal\image\Entity\ImageStyle;
@@ -15,54 +16,64 @@ function red_preprocess_views_view_grouping__products__page_1(&$vars) {
   if (!empty($vars['title'])) {
     $raw_grouping_title = $vars['title'];
     $parent_values = explode('|', strip_tags($raw_grouping_title, '<a>'));
-    $parent_values = array_filter($parent_values, function($val){ return str_replace(array("\r\n", "\r", "\n"), "", $val); });
+    $parent_values = array_filter($parent_values, function ($val) {
+      return str_replace(["\r\n", "\r", "\n"], "", $val);
+    });
 
     foreach ($parent_values as $key => $value) {
       switch ($key) {
         case 0:
           $style = ImageStyle::load('product_term_cover_1_crop');
-          if($style) {
+          if ($style) {
             $url = $style->buildUrl(trim($value));
             $vars['cover_image_url'] = str_replace('http://', '//', $url);
-          } else {
+          }
+          else {
             $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
           }
           break;
+
         case 1:
           $parent = $value;
           $vars['cover_title'] = strip_tags($value);
           break;
+
         case 2:
           $vars['cover_description'] = $value;
           break;
+
       }
     }
 
     $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($vars['cover_title'])));
     $vars['hide'] = '';
 
-    // 국문인 경우 제품 분류 slug 치환
+    // 국문인 경우 제품 분류 slug 치환.
     $lang = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $slugs = [
       '전체제품' => 'standard',
       '신제품' => 'new-products',
-      '맞춤형제품' => 'customized'
+      '맞춤형제품' => 'customized',
     ];
     if ($lang == 'ko' && in_array($vars['cover_title'], array_keys($slugs))) {
       $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($slugs[$vars['cover_title']])));
     }
 
-    $dom = new DOMDocument;
+    $dom = new DOMDocument();
     $dom->loadHTML($parent);
     $nodes = $dom->getElementsByTagName('a');
     if (!empty($nodes->item(0))) {
-      $parent_term_id = str_replace('/taxonomy/term/', '', $nodes->item(0)->getAttribute('href'));
+      /** @var DOMElement $first */
+      $first = $nodes->item(0);
+      $parent_term_id = str_replace('/taxonomy/term/', '', $first->getAttribute('href'));
     }
     // /products 화면에서 customized 그룹을 표시합니다.
-    if ( (int) $parent_term_id > 0 && (int) $parent_term_id != 3) {
+    if ((int) $parent_term_id > 0 && (int) $parent_term_id != 3) {
       $vars['hide'] = " hide";
     }
-    if($parent_term_id == '/ko4') $vars['hide'] = " hide";
+    if ($parent_term_id == '/ko4') {
+      $vars['hide'] = " hide";
+    }
   }
 }
 
@@ -75,33 +86,41 @@ function red_preprocess_views_view_grouping__products__page_1(&$vars) {
 function red_preprocess_views_view_fields__products__page_1(&$vars) {
   $term_value = $vars['fields']['name']->content;
   $term_values = explode('|', strip_tags($term_value, '<a>'));
-  $term_values = array_filter($term_values, function($val){ return str_replace(array("\r\n", "\r", "\n"), "", $val); });
+  $term_values = array_filter($term_values, function ($val) {
+    return str_replace(["\r\n", "\r", "\n"], "", $val);
+  });
   foreach ($term_values as $key => $value) {
     switch ($key) {
       case 0:
         $style = ImageStyle::load('product_term_thumb_crop');
-        if($style) {
+        if ($style) {
           $url = $style->buildUrl(trim($value));
           $vars['cover_image_url'] = str_replace('http://', '//', $url);
-        } else {
+        }
+        else {
           $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
         }
         break;
+
       case 1:
         $vars['cover_title'] = $value;
         break;
+
     }
   }
   $sub_term_class = trim(str_replace(' ', '-', str_replace(' &amp; ', '-', strtolower(strip_tags($vars['cover_title'])))));
   $vars['item_class'] = ' sub-term sub-' . $sub_term_class;
-  
-  // standard 서브 분류 중복 제거
-  if($vars['view']->current_display !== 'page_1') {
-    $parent = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($vars['row']->tid);
-    $parent = reset($parent);
-    if($parent->ID() == 1 && $vars['row']->index % 2 == 0 ) $vars['item_class'] = ' hide';
-  }
 
+  // Standard 서브 분류 중복 제거.
+  if ($vars['view']->current_display !== 'page_1') {
+    /** @var EntityStorageInterface $term_storage */
+    $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $parent = $term_storage->loadParents($vars['row']->tid);
+    $parent = reset($parent);
+    if ($parent->ID() == 1 && $vars['row']->index % 2 == 0) {
+      $vars['item_class'] = ' hide';
+    }
+  }
 }
 
 /**
@@ -113,25 +132,31 @@ function red_preprocess_views_view_fields__products__page_1(&$vars) {
 function red_preprocess_views_view_fields__customized__block_1(&$vars) {
   $term_value = $vars['fields']['name']->content;
   $parent_values = explode('|', strip_tags($term_value));
-  $parent_values = array_filter($parent_values, function($val){ return str_replace(array("\r\n", "\r", "\n"), "", $val); });
+  $parent_values = array_filter($parent_values, function ($val) {
+    return str_replace(["\r\n", "\r", "\n"], "", $val);
+  });
 
   foreach ($parent_values as $key => $value) {
     switch ($key) {
       case 0:
         $style = ImageStyle::load('product_term_cover_2_crop');
-        if($style) {
+        if ($style) {
           $url = $style->buildUrl(trim($value));
           $vars['cover_image_url'] = str_replace('http://', '//', $url);
-        } else {
+        }
+        else {
           $vars['cover_image_url'] = str_replace('http://', '//', file_create_url(trim($value)));
         }
         break;
+
       case 1:
         $vars['cover_title'] = $parent = $value;
         break;
+
       case 2:
         $vars['cover_description'] = '<p>' . $value . '</p>';
         break;
+
     }
   }
   $vars['parent_id'] = trim(str_replace(' ', '-', strtolower($vars['cover_title'])));
@@ -142,7 +167,7 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
     $vars['cover_title'] = 'Projects';
     // 관리자인 경우 프로젝트 추가 버튼을 보여줍니다.
     $user = \Drupal::currentUser()->getRoles();
-    if(in_array("administrator", $user)) {
+    if (in_array("administrator", $user)) {
       $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; new project</a>';
       $vars['cover_description'] .= $button;
     }
@@ -151,7 +176,7 @@ function red_preprocess_views_view_fields__customized__block_1(&$vars) {
   if ($current_uri == '/ko/projects') {
     $vars['cover_title'] = '시공사례';
     $user = \Drupal::currentUser()->getRoles();
-    if(in_array("administrator", $user)) {
+    if (in_array("administrator", $user)) {
       $button = '<p>&nbsp;</p><a href="/node/add/project" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; 추가하기</a>';
       $vars['cover_description'] .= $button;
     }
@@ -169,24 +194,34 @@ function red_preprocess_views_view_unformatted__taxonomy_term(&$vars) {
     case 'block_1':
       $vars['title'] = $view->getTitle();
       break;
+
     case 'page_1':
       $tid = reset($view->args);
-      $parent_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($tid);
+      /** @var EntityStorageInterface $term_storage */
+      $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+      $parent_term = $term_storage->loadParents($tid);
       if ('3' == key($parent_term)) {
         $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+        /** @var EntityInterface $term */
         $vars['title'] = $term->getName();
       }
       break;
+
     case 'attachment_1':
       $first_row = reset($vars['rows']);
-      if(!empty($first_row)) {
+      if (!empty($first_row)) {
         $vars['group_tid'] = $first_row['content']['#row']->taxonomy_term_field_data_node_field_data_tid;
       }
+      break;
+
   }
 }
 
+/**
+ * Implements template_preprocess_views_view().
+ */
 function red_preprocess_views_view(&$vars) {
-  if($vars['id'] == 'taxonomy_term' && $vars['display_id'] == 'page_2') {
+  if ($vars['id'] == 'taxonomy_term' && $vars['display_id'] == 'page_2') {
     $vars['attributes']['class'][] = 'my-5';
   }
 }
