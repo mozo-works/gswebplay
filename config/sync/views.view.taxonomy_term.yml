@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.cover
     - field.storage.node.field_cover
-    - image.style.product_card
     - image.style.product_card_crop
     - image.style.thumbnail
     - taxonomy.vocabulary.product
@@ -354,7 +353,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: product_card
+            image_style: product_card_crop
             image_link: ''
           group_column: ''
           group_columns: {  }
