@@ -3,22 +3,19 @@
         // Initialize the jQuery File Upload plugin
         $('.upload').each(function(){
             var $this = $(this);
-            var $_id = $(this).attr('data-id');
+            var $_id = $(this).attr('id');
             $(this).fileupload({
                 add: function (e, data) {
-                    console.log(data.form.context.id);
-                    var $_id = data.form.context.id;
-                    //alert(data.form.context.id);
                     $('#gva-' + $_id + ' .loading').each(function(){
-                            $(this).css('display', 'inline-block'); 
+                        $(this).css('display', 'inline-block');
                     });
                     var jqXHR = data.submit().done(function(data){
                         data = JSON.parse(data);
                         $('#gva-' + $_id + ' .loading').each(function(){
-                            $(this).css('display', 'none'); 
+                            $(this).css('display', 'none');
                         });
                         $('#gva-' + $_id + ' input.file-input').each(function(){
-                            $(this).val(data['file_url']); 
+                            $(this).val(data['file_url']);
                         });
 
                         $('#slide-reviews-' + $_id).css('background', 'url(\'' + data['file_url_full'] + '\')');
@@ -31,7 +28,7 @@
                 },
 
                 progress: function(e, data){
-                
+
                 },
                 fail: function(e, data){
                     // Something has gone wrong!
