@@ -26,7 +26,8 @@
   {%
     set row_classes = [
       default_row_class ? 'view__row',
-      'col-md-4'
+      'col-md-4',
+      'product--' ~ row.content['#node'].id
     ]
   %}
     <div{{ row.attributes.addClass(row_classes) }}>

@@ -200,6 +200,33 @@
         removeDuplicates('.draggable.product--' + item);
       });
     }
+
+    // termRoot
+    termRoot = $('.view--taxonomy-term--page-1');
+    if (termRoot.length > 0) {
+      var seen = {};
+      $('.view__row').each(function () {
+        var txt = $(this).attr('class');
+        if (seen[txt]) {
+          $(this).remove();
+        } else {
+          seen[txt] = true;
+        }
+      });
+    }
+    // termRootSort
+    termRootSort = $('.view--taxonomy-term--page-2');
+    if (termRootSort.length > 0) {
+      var seen = {};
+      $('tr.draggable').each(function () {
+        var txt = $(this).attr('class');
+        if (seen[txt]) {
+          $(this).remove();
+        } else {
+          seen[txt] = true;
+        }
+      });
+    }
   });
 
 })(jQuery, Drupal, this, this.document);
