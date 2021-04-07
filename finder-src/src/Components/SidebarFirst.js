@@ -70,7 +70,7 @@ export default class SidebarFirst extends Component {
     const { menu, routes } = this.props
     return (
       <Router>
-        <Route exact path="/"><Redirect to="/standard/net-climber/19" /></Route>
+        <Route exact path="/"><Redirect to={menu[1].link} /></Route>
         <Sidebar1 id="SidebarFirst" className="sidebar">
           <FixedCol vertical tag="nav">
             {menu.map((item, index) => (

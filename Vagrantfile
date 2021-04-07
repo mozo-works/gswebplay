@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
     node.vm.network "private_network", ip: "192.168.50.11"
     node.vm.provider "virtualbox" do |vb|
       vb.name = "gswebplay"
-      vb.cpus = 1
-      vb.memory = 1024
+      vb.cpus = 2
+      vb.memory = 2048
     end
 
     node.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"

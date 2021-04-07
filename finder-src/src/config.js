@@ -6,11 +6,11 @@ const appConfig = {
     },
     {
       "title": "Standard",
-      "link": "/standard/net-climber/19"
+      "link": "/standard/antz-hill/115"
     },
     {
       "title": "New Products",
-      "link": "/new-products/teardrop-maze/98"
+      "link": "/new-products/top-of-the-placetop/285"
     },
     {
       "title": "Customized",

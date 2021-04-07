@@ -66,64 +66,70 @@ function ProductNode(nodeObjects) {
   }
   let node = nodes[i]
   var cert;
-  if(node.field_cert) {
-    cert = <div className="product__field-cert">
-      <a href={ node.field_cert } className="btn-download">
-        Certificate &nbsp; <i className="fa fa-download" aria-hidden="true"></i>
-      </a>
-    </div>
+  if(node) {
+    if(node.field_cert) {
+      cert = <div className="product__field-cert">
+        <a href={ node.field_cert } className="btn-download">
+          Certificate &nbsp; <i className="fa fa-download" aria-hidden="true"></i>
+        </a>
+      </div>
+    }
+    return (
+      <Row className="pt-3">
+        <Col lg={7}>
+          <ProductCarousel images={node.field_image} title={node.title} />
+        </Col>
+        <Col lg={5}>
+          <div className="group-right">
+            <div className="product__node-title">
+              <h2>{ node.title }</h2>
+            </div>
+            { node.field_ages.length > 0 &&
+            <div className="product__field-ages">
+              <strong className="field__label">Ages</strong>
+              <div className="field__item">{ node.field_ages }</div>
+            </div>
+            }
+            { node.field_capacity.length > 0 &&
+            <div className="product__field-capacity">
+              <strong className="field__label">Capacity</strong>
+              <div className="field__item">{ node.field_capacity }</div>
+            </div>
+            }
+            { node.field_size_meter.length > 0 &&
+            <div className="product__field-size-meter">
+              <strong className="field__label">Size (m)</strong>
+              <div className="field__item">{ node.field_size_meter }</div>
+            </div>
+            }
+            { node.field_size_inch.length > 0 &&
+            <div className="product__field-size-inch">
+              <strong className="field__label">Size ('-")</strong>
+              <div className="field__item">{ decodeHtml(node.field_size_inch) }</div>
+            </div>
+            }
+            { node.field_use_zone.length > 0 &&
+            <div className="product__field-use-zone">
+              <strong className="field__label">Use Zone (m)</strong>
+              <div className="field__item">{ node.field_use_zone }</div>
+            </div>
+            }
+            { node.field_fall_height.length > 0 &&
+            <div className="product__field-fall-height">
+              <strong className="field__label">Fall Height (m)</strong>
+              <div className="field__item">{ node.field_fall_height }</div>
+            </div>
+            }
+            { cert }
+          </div>
+        </Col>
+      </Row>
+    )
+  } else {
+    return (
+      <Row className="pt-3">no node!</Row>
+    )
   }
-  return (
-    <Row className="pt-3">
-      <Col lg={7}>
-        <ProductCarousel images={node.field_image} title={node.title} />
-      </Col>
-      <Col lg={5}>
-        <div className="group-right">
-          <div className="product__node-title">
-            <h2>{ node.title }</h2>
-          </div>
-          { node.field_ages.length > 0 &&
-          <div className="product__field-ages">
-            <strong className="field__label">Ages</strong>
-            <div className="field__item">{ node.field_ages }</div>
-          </div>
-          }
-          { node.field_capacity.length > 0 &&
-          <div className="product__field-capacity">
-            <strong className="field__label">Capacity</strong>
-            <div className="field__item">{ node.field_capacity }</div>
-          </div>
-          }
-          { node.field_size_meter.length > 0 &&
-          <div className="product__field-size-meter">
-            <strong className="field__label">Size (m)</strong>
-            <div className="field__item">{ node.field_size_meter }</div>
-          </div>
-          }
-          { node.field_size_inch.length > 0 &&
-          <div className="product__field-size-inch">
-            <strong className="field__label">Size ('-")</strong>
-            <div className="field__item">{ decodeHtml(node.field_size_inch) }</div>
-          </div>
-          }
-          { node.field_use_zone.length > 0 &&
-          <div className="product__field-use-zone">
-            <strong className="field__label">Use Zone (m)</strong>
-            <div className="field__item">{ node.field_use_zone }</div>
-          </div>
-          }
-          { node.field_fall_height.length > 0 &&
-          <div className="product__field-fall-height">
-            <strong className="field__label">Fall Height (m)</strong>
-            <div className="field__item">{ node.field_fall_height }</div>
-          </div>
-          }
-          { cert }
-        </div>
-      </Col>
-    </Row>
-  )
 }
 
 const BottomFixedNav = styled('div')`
