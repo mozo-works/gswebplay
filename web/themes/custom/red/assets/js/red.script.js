@@ -201,6 +201,20 @@
       });
     }
 
+    // Other products block: block_1
+    otherProducts = $('.view--taxonomy-term--block-1 .group .row');
+    if (otherProducts.length > 0) {
+      var seen = {};
+      $('.view__row').each(function () {
+        var txt = $(this).attr('class');
+        if (seen[txt]) {
+          $(this).remove();
+        } else {
+          seen[txt] = true;
+        }
+      });
+    }
+
     // termRoot
     termRoot = $('.view--taxonomy-term--page-1');
     if (termRoot.length > 0) {
