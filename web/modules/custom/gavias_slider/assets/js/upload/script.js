@@ -9,8 +9,12 @@
                     $('#gva-' + $_id + ' .loading').each(function(){
                         $(this).css('display', 'inline-block');
                     });
-                    var jqXHR = data.submit().done(function(data){
+                    var jqXHR = data.submit()
+                      .done(function(data){
                         data = JSON.parse(data);
+                        if (data.status == 'error') {
+                          alert(data.message);
+                        }
                         $('#gva-' + $_id + ' .loading').each(function(){
                             $(this).css('display', 'none');
                         });
@@ -23,7 +27,6 @@
                         $('#gva-' + $_id + ' .gavias-field-upload-remove').each(function(){
                             $(this).css('display', 'inline-block');
                         });
-
                     });
                 },
 
@@ -32,6 +35,7 @@
                 },
                 fail: function(e, data){
                     // Something has gone wrong!
+                    console.log(e, data);
                     data.context.addClass('error');
                 }
             });
