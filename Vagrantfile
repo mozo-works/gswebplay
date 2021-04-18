@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
     node.vm.box = "ubuntu/focal64"
     node.vm.hostname = "gswebplay"
     node.vm.network "private_network", ip: "192.168.50.11"
+    node.vm.synced_folder ".", "/vagrant", disabled: true
     node.vm.provider "virtualbox" do |vb|
       vb.name = "gswebplay"
       vb.cpus = 2

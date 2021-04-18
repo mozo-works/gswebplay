@@ -35,8 +35,11 @@
     ],
     "settings": {
         "breadcrumbs.enabled": true,
+        "composer.enabled": true,
+        "composer.executablePath": "/usr/local/bin/composer",
         "css.validate": true,
         "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultFormatter": "persoderlind.vscode-phpcbf",
         "editor.tabSize": 2,
         "editor.autoIndent": "full",
         "editor.insertSpaces": true,
@@ -49,6 +52,12 @@
         "editor.rulers": [
             80
         ],
+        "emmet.includeLanguages": {
+            "twig": "html"
+        },
+        "emptyIndent.removeIndent": true,
+        "emptyIndent.highlightIndent": false,
+        "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
         "files.associations": {
             "*.inc": "php",
             "*.module": "php",
@@ -61,29 +70,25 @@
             "*.info": "ini",
             "*.html": "twig"
         },
-        "emmet.includeLanguages": {
-            "twig": "html"
-        },
-        "files.trimTrailingWhitespace": true,
         "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
         "html.format.enable": true,
         "html.format.wrapLineLength": 80,
-        "telemetry.enableTelemetry": false,
-        "emptyIndent.removeIndent": true,
-        "emptyIndent.highlightIndent": false,
-        "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
-        "phpcs.enable": true,
-        "phpcs.standard": "/vagrant/vendor/drupal/coder/coder_sniffer/Drupal",
+        "intelephense.environment.documentRoot": "${workspaceFolder}/web/core/index.php",
+        "intelephense.format.braces": "k&r",
         "php.validate.enable": true,
         "php.validate.executablePath": "/usr/bin/php",
         "php.validate.run": "onType",
         "php.suggest.basic": false,
-        "intelephense.environment.documentRoot": "/vagrant/web/core/index.php",
-        "intelephense.format.braces": "k&r",
         "php-docblocker.gap": true,
         "php-docblocker.useShortNames": true,
-        "composer.enabled": true,
-        "composer.executablePath": "/usr/local/bin/composer",
+        "phpcs.enable": true,
+        "phpcs.standard": "${workspaceFolder}/vendor/drupal/coder/coder_sniffer/",
+        "phpcbf.enable": true,
+        "phpcbf.executablePath": "${workspaceFolder}/vendor/bin/phpcbf",
+        "phpcbf.documentFormattingProvider": true,
+        "phpcbf.onsave": false,
+        "phpcbf.standard": "${workspaceFolder}/vendor/drupal/coder/coder_sniffer/",
         "remote.autoForwardPorts": false,
         "remote.SSH.defaultForwardedPorts": [
             {
@@ -91,6 +96,7 @@
                 "remotePort": 80,
                 "name": "apache2"
             }
-        ]
+        ],
+        "telemetry.enableTelemetry": false,
     }
 }
