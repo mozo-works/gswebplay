@@ -125,13 +125,6 @@ class AdminController extends ControllerBase {
     global $base_url;
     $allowed = ['png', 'jpg', 'gif', 'zip'];
     $_id = gavias_slider_makeid(6);
-    $max = Environment::getUploadMaxSize();
-    $error = [
-      'status' => 'error',
-      'message' => '한번에 업로드할 수 있는 파일 크기 ' . format_size($max) . ' 를 초과했습니다.'
-    ];
-    print json_encode($error);
-    exit;
 
     if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 

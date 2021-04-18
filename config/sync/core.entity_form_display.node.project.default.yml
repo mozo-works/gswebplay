@@ -14,6 +14,7 @@ dependencies:
   module:
     - datetime
     - image
+    - image_widget_crop
     - path
     - video_embed_field
 id: node.project.default
@@ -30,10 +31,18 @@ content:
   field_cover:
     weight: 3
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: procut_cover_crop_preview
+      crop_list:
+        - product_card_crop
+      crop_types_required:
+        - product_card_crop
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_image:
     weight: 6
@@ -116,6 +125,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 8

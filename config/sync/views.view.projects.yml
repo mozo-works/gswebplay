@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_cover
     - field.storage.node.field_year
-    - image.style.card
+    - image.style.product_card_crop
     - node.type.project
     - system.menu.main-right
   module:
@@ -125,7 +125,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: card
+            image_style: product_card_crop
             image_link: content
           group_column: ''
           group_columns: {  }

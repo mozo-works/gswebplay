@@ -111,3 +111,10 @@
     padding: 10px 5px;
   }
 }
+
+.view--projects.view--projects--page-1 .view__row .box {
+  height: 320px;
+}
+.view--projects.view--projects--page-1 .view__row .views-field-title {
+  margin: 10px 20px;
+}
