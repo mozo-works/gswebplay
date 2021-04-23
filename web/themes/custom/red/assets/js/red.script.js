@@ -241,6 +241,15 @@
         }
       });
     }
+
+    // 프로젝트 상세 owlcarousel 반응형 이미지 크기 조절
+    if ($('.owl-carousel').length > 0) {
+      let width = $('.owl-carousel .owl-item').first().width();
+      let height = (720 * width) / 1000;
+      $('.owl-carousel .owl-item img').each(function(){
+        $(this).width(width).height(height);
+      })
+    }
   });
 
 })(jQuery, Drupal, this, this.document);

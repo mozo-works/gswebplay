@@ -118,3 +118,12 @@
 .view--projects.view--projects--page-1 .view__row .views-field-title {
   margin: 10px 20px;
 }
+
+.owl-carousel .owl-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.view--projects.view--projects--page-1 .view__row {
+  margin-bottom: 60px;
+}
