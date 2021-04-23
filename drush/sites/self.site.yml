@@ -15,4 +15,4 @@ prod:
   ssh:
     options: '-i ${env.PROD_PEM_KEY}'
   paths:
-    - files: sites/default/files
+    - files: /data/files
