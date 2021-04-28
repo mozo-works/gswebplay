@@ -9637,6 +9637,12 @@ footer {
 .project--full {
   padding: 0 70px;
 }
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .project--full {
+    padding: 0 15px;
+  }
+}
 
 .project--full .content-footer {
     margin-top: 40px;
