@@ -127,3 +127,7 @@
 .view--projects.view--projects--page-1 .view__row {
   margin-bottom: 60px;
 }
+
+.view--products.view--products--page-1 #customized {
+  display: none;
+}
